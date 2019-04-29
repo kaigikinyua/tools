@@ -1,0 +1,9 @@
+1.Create a Files action module to handle
+	a.(R,W,A) actions on logs,settings
+	b.move the files
+2.Animations
+	a.show what percentage of moving is done
+3.String Formatting
+	a.Split the Strings accordingly and return a specific data type
+	b.Hold Lists to be operated on
+	
