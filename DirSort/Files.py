@@ -24,7 +24,7 @@ class FileActions:
 
 	def complexFile(self,filename,action,data):
 		action=action.lower()
-		if action=="w"
+		if action=="w":
 			try:
 				f.open(filename,"w")
 				f.write(data)
