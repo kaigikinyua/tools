@@ -1,4 +1,5 @@
 import os
+import json
 import shutil
 class FileActions:
 	#contain most of the creating, reading actions on files
@@ -49,6 +50,21 @@ class FileActions:
 		except:
 			return "Failed to Copy File"
 
+	def jsonWrite(self,filename,data):
+		try:
+			with open("myfile.json","w") as f:
+				json.dump(data,f)
+		except:
+			print("Failed to write to .json File")
+			return False
 
+	def jsonRead(self,filename):
+		try:
+			with open("myfile.json","r") as f:
+				data=json.load(f)
+				return data
+		except:
+			print("Failed to Read json file")
+			return False
 
 
