@@ -1,6 +1,14 @@
 {
     "settings":[
-    {"file_ext":"mp3","dir":"/home/antony/Music"},
-    {"file_ext":"mp4","dir":"/home/antony/Music"}
+    {"ext":"mp3","dir":"/home/antony/Music"},
+    {"ext":"mp4","dir":"/home/antony/Music"},
+    {"ext":"jpeg","dir":"/home/antony/Pictures"},
+    {"ext":"png","dir":"/home/antony/Pictures"},
+    {"ext":"gif","dir":"/home/antony/Pictures"},
+    {"ext":"py","dir":"/home/antony/Programming/Python"},
+    {"ext":"js","dir":"/home/antony/Programming/JS"},
+    {"ext":"json","dir":"/home/antony/Programming/JSON"},
+    {"ext":"html","dir":"/home/antony/Programming/WEB"},
+    {"ext":"css","dir":"/home/antony/Programming/WEB"}
   ]
 }

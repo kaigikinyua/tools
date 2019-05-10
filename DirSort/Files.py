@@ -3,27 +3,21 @@ import json
 import shutil
 class FileActions:
 	#contain most of the creating, reading actions on files
-	def simpleFile(self,filename,action):
-		action=action.lower()
-		if action=="c":
-			try: 
-				f=open(filename,"w")
-				f.close()
-				return True
-			except:
-				return "Failed to create file"+filename
-		elif action=="r":
-			try:
-				f=open(filename,"r")
-				data=f.readlines()
-				f.close()
-				return data
-			except:
-				return "Failed to read file"+filename
-		else:
-			return "Unkown File Operation "+action+" can only c,r"
+	#creating a file and reading one
+	def appendtoFile(self,filename,data):
+		try:
+			f=open(filename,"r")
+			d=f.readlines()
+			f.close()
+			f=open(filename,"w")
+			f.write(d[0]+"\n"+data)
+			f.close()
+		except:
+			print("Error Appending To File")
+			return "Error Appending To file"
 
-	def complexFile(self,filename,action,data):
+	#create file and write to file	
+	def createFile(self,filename,action,data):
 		action=action.lower()
 		if action=="w":
 			try:
@@ -38,7 +32,7 @@ class FileActions:
 			return True
 		else:
 			return "Unkown File Operation "+action+" can only w/a"
-			
+	#move a file from filepath to destination	
 	def moveFile(self,filepath,destination):
 		try: 
 			shutil.copy(filepath,destination)
@@ -49,22 +43,20 @@ class FileActions:
 				return "Failed to delete file in the original folder"
 		except:
 			return "Failed to Copy File"
-
+	#write to json
 	def jsonWrite(self,filename,data):
 		try:
-			with open("myfile.json","w") as f:
+			with open(filename,"w") as f:
 				json.dump(data,f)
 		except:
 			print("Failed to write to .json File")
 			return False
-
+	#read from json
 	def jsonRead(self,filename):
 		try:
-			with open("myfile.json","r") as f:
+			with open(filename,"r") as f:
 				data=json.load(f)
 				return data
 		except:
 			print("Failed to Read json file")
 			return False
-
-
