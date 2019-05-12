@@ -60,3 +60,11 @@ class FileActions:
 		except:
 			print("Failed to Read json file")
 			return False
+
+	def extension(self,filename):
+		try:
+			ext=filename.split(".")
+			return ext[len(ext)-1]
+		except:
+			return "no extension"
+	#load settings from settings.json
