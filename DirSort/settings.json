@@ -1,5 +1,6 @@
 {
     "settings":[
+    {"ext":"pdf","dir":"/home/antony/Documents"},
     {"ext":"mp3","dir":"/home/antony/Music"},
     {"ext":"mp4","dir":"/home/antony/Music"},
     {"ext":"jpeg","dir":"/home/antony/Pictures"},
@@ -9,6 +10,11 @@
     {"ext":"js","dir":"/home/antony/Programming/JS"},
     {"ext":"json","dir":"/home/antony/Programming/JSON"},
     {"ext":"html","dir":"/home/antony/Programming/WEB"},
-    {"ext":"css","dir":"/home/antony/Programming/WEB"}
+    {"ext":"css","dir":"/home/antony/Programming/WEB/CSS"},
+    {"ext":"scss","dir":"/home/antony/Programming/WEB/Sass"},
+    {"ext":"java","dir":"/home/antony/Programming/Java"},
+    {"ext":"cpp","dir":"/home/antony/Programming/C"},
+    {"ext":"c","dir":"/home/antony/Programming/C"},
+    {"ext":"end","dir":"/home/antony/Desktop"}
   ]
 }

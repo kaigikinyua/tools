@@ -1,5 +1,9 @@
+
 from Files import *
+from Logs import *
+
 import os
+import datetime
 class Control:
 	"""
 	 program flow 
@@ -28,12 +32,18 @@ class Control:
 					directoryList=os.listdir(directory)
 					for i in range(len(settings["settings"])-1):
 						fileExt=settings["settings"][i]["ext"]
-						j=0
-						for j in range(len(directoryList)-1):
+						j=1
+						logs=Logs()
+						for j in range(len(directoryList)):
 							if fileExt.lower()==f.extension(directoryList[j]):
 								r=f.moveFile(directory+'/'+directoryList[j],settings["settings"][i]["dir"])
+								logs.log('simple','./Logs/MovedFiles.txt',"\nFile "+directory+"/"+directoryList[j]+" moved to "+settings["settings"][i]["dir"]+" on "+str(datetime.date.today())+" at "+str(datetime.datetime.now()))
 								if(r!=True):
 									print(r)
+					rem=os.listdir(directory)
+					for f in rem:
+						if os.path.isfile(f):
+							print(f+" not moved ")
 				else:
 					c=Control()
 					c.loadNewSettings()

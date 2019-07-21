@@ -1,0 +1,39 @@
+/home/antony/Downloads/MovedFiles.txtIonic 3 Tutorial #18 Local Storage set and get.mp4 moved to /home/antony/MusicFile 
+/home/antony/Downloads/MovedFiles.txtAwesome To-do list Using HTML CSS & JQuery.mp4 moved to /home/antony/MusicFile
+/home/antony/Downloads/MovedFiles.txtParallax Scrolling Effects _ Html CSS & jQuery.mp4 moved to /home/antony/MusicFile 
+
+/home/antony/Desktop/OLYMPIA/music.mp4 moved to /home/antony/MusicFile 
+/home/antony/Desktop/OLYMPIA/antony.py moved to /home/antony/Programming/PythonFile
+/home/antony/Desktop/OLYMPIA/kinyua.js moved to /home/antony/Programming/JS File
+/home/antony/Desktop/OLYMPIA/kinyua.json moved to /home/antony/Programming/JSON
+File /home/antony/Desktop/OLYMPIA/antony.py moved to /home/antony/Programming/Python
+File /home/antony/Desktop/OLYMPIA/kinyua.js moved to /home/antony/Programming/JS
+File /home/antony/Desktop/OLYMPIA/kinyua.json moved to /home/antony/Programming/JSON
+File /home/antony/Desktop/OLYMPIA/html.html moved to /home/antony/Programming/WEB
+//corrected the syntax
+File /home/antony/Desktop/OLYMPIA/js.py moved to /home/antony/Programming/Python
+File /home/antony/Desktop/OLYMPIA/js.js moved to /home/antony/Programming/JS
+File /home/antony/Desktop/OLYMPIA/js.json moved to /home/antony/Programming/JSON
+File /home/antony/Desktop/OLYMPIA/css.css moved to /home/antony/Programming/WEB/CSS
+File /home/antony/Desktop/OLYMPIA/val.scss moved to /home/antony/Programming/WEB/Sass
+File /home/antony/Desktop/OLYMPIA/js.java moved to /home/antony/Programming/Java
+File /home/antony/Desktop/OLYMPIA/val.java moved to /home/antony/Programming/Java
+File /home/antony/Desktop/OLYMPIA/test.c moved to /home/antony/Programming/C
+File /home/antony/Desktop/OLYMPIA/val.c moved to /home/antony/Programming/C
+File /home/antony/Desktop/OLYMPIA/val.cpp moved to /home/antony/Programming/CPP
+File /home/antony/Desktop/OLYMPIA/html.html moved to /home/antony/Programming/WEB
+File /home/antony/Desktop/OLYMPIA/css.css moved to /home/antony/Programming/WEB/CSS
+File /home/antony/Desktop/OLYMPIA/val.scss moved to /home/antony/Programming/WEB/Sass
+File /home/antony/Desktop/OLYMPIA/val.java moved to /home/antony/Programming/Java
+File /home/antony/Desktop/OLYMPIA/val.cpp moved to /home/antony/Programming/CPP
+File /home/antony/Desktop/OLYMPIA/mypdf.pdf moved to /home/antony/Documents
+File /home/antony/Desktop/OLYMPIA/one.c moved to /home/antony/Programming/C
+File /home/antony/Desktop/OLYMPIA/one.c moved to /home/antony/Programming/C
+//added datetime
+File /home/antony/Desktop/OLYMPIA/kinyua.json moved to /home/antony/Programming/JSON on 2019-07-22 at 2019-07-22 00:25:35.301645
+File /home/antony/Desktop/OLYMPIA/js.json moved to /home/antony/Programming/JSON on 2019-07-22 at 2019-07-22 00:25:35.304019
+File /home/antony/Desktop/OLYMPIA/one.cpp moved to /home/antony/Programming/C on 2019-07-22 at 2019-07-22 00:25:35.306076
+File /home/antony/Desktop/OLYMPIA/test.c moved to /home/antony/Programming/C on 2019-07-22 at 2019-07-22 00:25:35.307716
+File /home/antony/Desktop/OLYMPIA/one.c moved to /home/antony/Programming/C on 2019-07-22 at 2019-07-22 00:25:35.309210
+File /home/antony/Desktop/OLYMPIA/val.c moved to /home/antony/Programming/C on 2019-07-22 at 2019-07-22 00:25:35.310709
+File /home/antony/Desktop/OLYMPIA/now.js moved to /home/antony/Programming/JS on 2019-07-22 at 2019-07-22 00:29:25.114270
