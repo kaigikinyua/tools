@@ -1,6 +1,7 @@
 import os
 from Files import *
 import json
+import random
 class AnalyzeDir:
 	def getdir(self):
 		directory=input("Enter a directory to analyze\n")
@@ -27,7 +28,6 @@ class AnalyzeDir:
 		F=FileActions()
 		a=open('./Analysis/'+dirname+'.json','w')
 		a.close()
-		#a=open('./Analysis/'+dirname+'.json','a')
 		extensions=[]
 		extensionscontent=[]
 		for file in directorycontent:
@@ -64,15 +64,18 @@ class AnalyzeDir:
 		analysis["overalanalysis"]=[{"percentage":sortedlist[0]} ]
 		
 		F.jsonWrite('./Analysis/'+dirname+".json",analysis)
+
 	def countExtensions(self,ext,extlist):
 		number=0
 		for e in extlist:
 			if e==ext:
 				number+=1
 		return number
+
 	def calculatePercentage(self,number,total):
 		percentage=(number/total)*100
 		return percentage
+
 	def sort(self,datalist):
 		for i in range(len(datalist)-1):
 			if(datalist[i]<datalist[i+1]):
@@ -80,7 +83,49 @@ class AnalyzeDir:
 				datalist[i]=datalist[i+1]
 				datalist[i+1]=holder
 		return datalist
+
+	def mine(self,filepath):
+		x=open(filepath,'r')
+		files=x.readlines()
+		x.close()
+		for file in files:
+			words=file.split(' ')
+			s=open('./Analysis/WordMine','a')
+			for word in words:
+				if word!="\n":
+					w=word.split('.')
+					word=w[0]
+					s.write(word+"\n")
+			s.close()
+		d=open('./Analysis/WordMine','r')
+		data=d.readlines()
+		d.close()
+		self.recurringWords(data)
+	def recurringWords(self,wordlist):
+		i=0
+		wC=0
+		recc_w={"words":[],"count":[]}
+		for word in wordlist:
+			if wordlist[i]=="":
+				del wordlist[i]
+			else:
+				recc_w["words"]+=[{"word":word,"count":0}]
+				wC+=1
+			j=0
+			for j in range(len(wordlist)):
+				if(j>i):
+					if word.lower()==wordlist[j].lower():
+						wordlist[j]=""
+				j+=1
+			i+=1
+			animation="|"*round(round((i/len(wordlist))*100)/10)
+			print(str(round((i/len(wordlist))*100))+'% done!!'+animation,end='\r')
+		d=open('./Analysis/WordRefine','w')
+		for word in wordlist:
+			if word!="":
+				d.write(word)
+		d.close()
 a=AnalyzeDir()
-a.getdir()
+a.mine('./DataFiles/youtube')
 
 
