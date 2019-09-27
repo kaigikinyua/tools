@@ -6,6 +6,7 @@ class AnalyzeDir:
 	def getdir(self):
 		directory=input("Enter a directory to analyze\n")
 		self.dircontent(directory)
+	
 	def dircontent(self,dir):
 		cwd=os.getcwd()
 		if(os.path.isfile):
@@ -24,6 +25,7 @@ class AnalyzeDir:
 			self.analysis(dircontent,filename)
 		else:
 			print(dir+" is not a directory")
+	
 	def analysis(self,directorycontent,dirname):
 		F=FileActions()
 		a=open('./Analysis/'+dirname+'.json','w')
@@ -101,6 +103,7 @@ class AnalyzeDir:
 		data=d.readlines()
 		d.close()
 		self.recurringWords(data)
+	
 	def recurringWords(self,wordlist):
 		i=0
 		wC=0
