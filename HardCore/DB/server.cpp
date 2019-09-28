@@ -6,7 +6,7 @@ using namespace std;
 class Connect{
     Connect(){
         int server_fd,new_socket,valread;
-        struct server
+        struct server_in
         {
             int opt=1;
             char buffer[1024]={0};

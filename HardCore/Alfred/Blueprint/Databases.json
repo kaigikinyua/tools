@@ -1,0 +1,14 @@
+{
+    "Blacklist":[
+        {"path":"./Memory/blacklist.db"},
+        {"command":"CREATE TABLE blacklist(word varchar(100));"}
+    ],
+    "Analysis":[
+        {"path":"./Memory/memory.db"},
+        {"command":"CREATE TABLE Analysis(wordcategory varchar(100),word varchar(100))"}
+    ],
+    "Words":[
+        {"path":"./Memory/memory.db"},
+        {"command":"CREATE TABLE Words(wordcategory varchar(100),word varchar(100))"}
+    ]
+}
