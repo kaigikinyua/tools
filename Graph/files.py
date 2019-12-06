@@ -6,6 +6,7 @@ class Files:
         else:
             try:
                 os.mkdir('./UsersDatabase/'+foldername)
+                #add database to logs
                 return True
             except:
                 return "Error writing in the directory"
@@ -17,8 +18,18 @@ class Files:
             try:
                 f=open('./UsersDatabase/'+databasename+"/"+filename+".json",'w')
                 f.close()
+                #add filename to logs
             except:
                 return False
+
+    def write_data_to_file(self,databasename,filename,parameter,data):
+        try:
+            filepath='./UsersDatabase/databasename/filename'
+            x=open(filepath,'w')
+            x.write(data)
+            x.close()
+        except:
+            return False
 
     def read_whole_file(self,databasename,file):
         try:
@@ -36,7 +47,8 @@ class Files:
             return True
         else:
             return False
-
-f=Files()
-f.create_database_folder('FirstDatabase')
-f.create_file('FirstDatabase','first_file')
+    
+    def json_response(self,data):
+        pass
+    def parse_input_data(self,data):
+        pass
