@@ -10,5 +10,4 @@ class Security:
 				if data[j]==keys[0][i]:
 					newData+=keys[1][i]
 		print(newData)
-
 s=Security("My name is Antony")
