@@ -5,5 +5,7 @@ class Admin:
         pass
     def checkPriviladges(self):
         pass
+
+class Authenticate:
     def login(self,username,password):
         pass
