@@ -1,0 +1,25 @@
+{
+    "names":[
+        {"male_first":["James","John","Andrew","Francis","Arnold","Silverster"]},
+        {"male_last":["Kamau","Karanja","Omondi"]},
+        {"female_first":["Ann","Angela","Aevone","Joy","Sheila"]},
+        {"female_last":["Anyango","Wanjiku","Wambui","Wangari","Chemutai"]}
+    ],
+    "email_domains":[
+        {"gmail":"@gmail.com"},
+        {"yahoo":"@yahoo.com"}
+    ],
+    "phone":[
+        {"Kenyan":"+25407"},
+        {"Global":[
+            "+232",
+            "+001",
+            "+060"
+        ]}
+    ],
+    "charcters":[
+        {"alpha":"abcdefghijklmnopqrstuvwxyz"},
+        {"numbers":"1234567890"},
+        {"special":"!@#$%^&*()"}
+    ]
+}

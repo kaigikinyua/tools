@@ -18,5 +18,5 @@ for line in data:
 	for c in line:
 		pline+=c
 		print(pline,end="\r")
-		time.sleep(0.01)
+		time.sleep(0.7)
 	pline="";
