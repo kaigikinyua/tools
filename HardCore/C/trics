@@ -1,0 +1,3 @@
+sleep for microseconds
+    #include<unistd.h>
+    usleep(microseconds);

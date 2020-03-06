@@ -68,6 +68,17 @@ class MyRandom:
             print("Error getting characters for passwords")
             print(characters)
             return False
+
+    @staticmethod
+    def gen_full_user(num_of_users):
+        #gen username and email
+        #gen age
+        #gen password
+        #gen phone
+        #pack to one json variable and return
+        pass 
+
+
     def get_mock_up_data(self,field):
         try:
             with open('Data.json','r') as f:
@@ -99,5 +110,3 @@ class Errors:
     def error_message(message):
         pass 
 
-
-print(MyRandom.random_pass(10,10))
