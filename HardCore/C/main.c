@@ -1,8 +1,10 @@
 #include<stdio.h>
 
 //command line arguments
-int main(*args){
-    printf("Hello World\n");
+int main(int argc,char *argv[]){
+    for(int i=0;i<argc;i++){
+        printf("%s \n",argv[i]);
+    }
 }
 
 void basics(){
