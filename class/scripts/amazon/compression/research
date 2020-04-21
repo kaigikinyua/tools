@@ -1,0 +1,16 @@
+Ideal One:
+    Take a big chunk of data and look for another similar arrangement and 
+    map to a certain hash
+    -the bigger the chunk and the more frequent the repetition the better the 
+        compression
+    -hard to find repetition chunks
+
+Innovating
+    An algorithm that chooses the best performant compression method based on the 
+    number of repetitions
+
+
+    math:
+        number of characters = x
+        length of string = l
+        possible combinations = x^() 
