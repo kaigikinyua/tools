@@ -1,10 +1,9 @@
 using System;
-
+using System.IO;
 class Fund{
     public static void Main(string[] args){
-        InputIO.output("Hello World");
-        InputIO.input("Enter your name"); 
-        TypesAndLoops.myArrays();
+        InputIO.readFile("filepath");
+        InputIO.writeToFile("filepath");
     }
 }
 
@@ -46,11 +45,24 @@ class InputIO{
         Console.WriteLine(parseState?"The number is "+intValue:"Value is not int");
     }
     //files io
-    public static string readFile(string filepath){
-        return "Not implemented";
+    public static void readFile(string filepath){
+        StreamReader read=new StreamReader("sample.txt");
+        string line=read.ReadLine();//read.ReadToEnd();
+        int lineNum=0;
+        while(line!=null){
+            lineNum++;
+            Console.WriteLine(line);
+            line=read.ReadLine();
+        }
+        read.Close();
     }
-    public static bool writeToFile(string filepath){
-        return false;
+    public static void writeToFile(string filepath){
+        StreamWriter writter=new StreamWriter("fileIO.txt");
+        string[] lines={"line one","abceefasdf","faeafgava"};
+        for(int i=0;i<3;i++){
+            writter.WriteLine(lines[i]);
+        }
+        writter.Close();
     }
 
     //private methods
