@@ -1,11 +1,18 @@
 using System;
-
+using System.IO;
 public class Files{
-    private bool fileExists(){
-        return false;
+    public static void readFile(string filePath){
+        StreamReader reader=new StreamReader("keys.txt");
+        string data=reader.ReadLine();
+        while(data!=null){
+            Console.WriteLine(data);
+            Console.WriteLine(data[3]);
+            data=reader.ReadLine();
+        }
+        reader.Close();
     }
-    public static string readFile(string filePath){
-        return "Opened File";
+    public static void writeToFile(string filePath){
+
     }
     
 }
@@ -21,10 +28,11 @@ public class Enc{
         Console.WriteLine("Decrypting......");
         return message;
     }
+    public string flip(string message){
+        return message;
+    }
+
     public static void Main(string[] args){
-        Console.WriteLine("Starting");
-        Enc enc=new Enc();
-        enc.encrypt("Message");
-        enc.decode("Message");
+        Files.readFile("/home");
     }
 }
