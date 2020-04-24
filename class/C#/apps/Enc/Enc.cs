@@ -33,7 +33,10 @@ public class Enc{
         Console.WriteLine("Decrypting......");
         //decrypt
         //flip message
-        return message;
+        Enc e=new Enc();
+        string decMessage=e.flip(message);
+        string keys=e.getKeys();
+        return decMessage;
     }
     //flip messages
     public string flip(string message){
