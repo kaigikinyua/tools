@@ -1,0 +1,11 @@
+{
+  "name": "gui",
+  "version": "1.0.0",
+  "description": "Task scheduler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kaigikinyua",
+  "license": "MIT"
+}

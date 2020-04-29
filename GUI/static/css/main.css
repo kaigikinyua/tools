@@ -1,0 +1,153 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background: #143250;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 7px;
+  background: lightseagreen;
+  border-radius: 5px;
+}
+
+button {
+  outline: none;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+section.navbar {
+  position: fixed;
+  left: 0px;
+  height: 100vh;
+  padding: 10px;
+  background: lightseagreen;
+  z-index: 100;
+  -webkit-box-shadow: 1px 1px 10px 10px rgba(10, 10, 10, 0.3);
+          box-shadow: 1px 1px 10px 10px rgba(10, 10, 10, 0.3);
+}
+
+section.navbar ul.nav {
+  margin-top: 20px;
+  color: white;
+}
+
+section.navbar ul.nav li {
+  margin: 10px 0px;
+}
+
+section.navbar ul.nav i {
+  font-size: 18px;
+}
+
+section.navbar ul.nav small {
+  display: none;
+}
+
+section.navbar div.bottom {
+  position: absolute;
+  bottom: 40px;
+  color: white;
+}
+
+section.full {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+div.today_list {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+div.today_list h3.title {
+  padding: 10px;
+  background: lightseagreen;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  text-align: center;
+}
+
+div.tasks {
+  background: white;
+  padding: 10px 0px;
+}
+
+div.tasks ul.task_list :nth-child(even) {
+  background: #d9f8f6;
+}
+
+div.tasks ul.task_list li {
+  padding: 10px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+div.tasks ul.task_list li:hover {
+  background: #188781;
+  color: white;
+}
+
+div.add {
+  position: fixed;
+  bottom: 100px;
+  right: 200px;
+  padding: 20px;
+  background: lightseagreen;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  -webkit-box-shadow: 1px 1px 10px 10px rgba(10, 10, 10, 0.3);
+          box-shadow: 1px 1px 10px 10px rgba(10, 10, 10, 0.3);
+}
+
+section.componets {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+  height: 80%;
+  background: white;
+  z-index: 102;
+  display: none;
+}
+
+section.componets h3.title {
+  padding: 10px;
+  background: lightseagreen;
+  color: white;
+  font-weight: lighter;
+}
+
+section.cover {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 101;
+  background: rgba(10, 10, 10, 0.3);
+  display: none;
+}
+/*# sourceMappingURL=main.css.map */

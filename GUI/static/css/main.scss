@@ -1,0 +1,143 @@
+*{
+    padding: 0px;
+    margin:0px;
+}
+body{
+    background:rgb(20,50,80);
+}
+::-webkit-scrollbar{
+    width:5px;
+    background:rgb(10,10,10);
+}
+::-webkit-scrollbar-thumb{
+    width:7px;
+    background:lightseagreen;
+    border-radius: 5px;
+}
+button{
+    outline:none;
+    padding:10px;
+}
+ul{
+    list-style-type: none;
+}
+
+@mixin middle {
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+@mixin centerH {
+    left:50%;
+    transform: translateX(-50%);
+}
+@mixin centerV {
+    top:50%;
+    transform: translateY(-50%);
+}
+
+section.navbar{
+    position: fixed;
+    left:0px;
+    height:100vh;
+    padding:10px;
+    background:lightseagreen;
+    z-index: 100;
+    box-shadow: 1px 1px 10px 10px rgba(10,10,10,0.3);
+    ul.nav{
+        margin-top:20px;
+        color:white;
+        li{
+            margin:10px 0px;
+        }
+        i{
+            font-size: 18px;
+        }
+        small{
+            display: none;
+        }
+        
+    }
+    div.bottom{
+        position: absolute;
+        bottom:40px;
+        color:white;
+    }
+}
+
+section.full{
+    position: relative;
+    height:100vh;
+    width:100vw;
+    overflow: hidden;
+}
+div.today_list{
+    position: relative;
+    width:70%;
+    height:70%;
+    @include middle;
+    h3.title{
+        padding:10px;
+        background:lightseagreen;
+        color:white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: lighter;
+        text-align: center;
+    }
+}
+div.tasks{
+    background:white;
+    padding:10px 0px;
+    ul.task_list :nth-child(even){
+        background:lighten(lightseagreen,50%);
+    }
+    ul.task_list{
+        li{
+            padding:10px;
+            transition:1s;
+        }
+        li:hover{
+            background: darken(lightseagreen,10%);
+            color:white;
+        }
+    }
+}
+
+div.add{
+    position: fixed;
+    bottom:100px;
+    right:200px;
+    padding:20px;
+    background: lightseagreen;
+    color:white;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 1px 1px 10px 10px rgba(10,10,10,0.3);
+}
+
+
+section.componets{
+    position: fixed;
+    @include middle;
+    width: 50%;
+    height: 80%;
+    background:white;
+    z-index: 102;
+    h3.title{
+        padding:10px;
+        background:lightseagreen;
+        color:white;
+        font-weight: lighter;
+    }
+    display: none;
+}
+section.cover{
+    position: fixed;
+    top:0px;
+    left:0px;
+    height:100%;
+    width:100%;
+    z-index: 101;
+    background: rgba(10,10,10,0.3);
+    display: none;
+}
