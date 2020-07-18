@@ -1,0 +1,26 @@
+{
+    "categories":[
+        {
+            "cat":"Programming",
+            "base_dir":"/School/Programming",
+            "dump_dir":"/Dump",
+            "sub_cat":[
+                {"name":"web","dir":"/web"},
+                {"name":"mobile","dir":"/mobile"},
+                {"name":"desktop","dir":"/desktop"}
+            ]
+        },
+        {
+            "cat":"GraphicsDesign",
+            "base_dir":"/School/GD",
+            "dump_dir":"/Dump",
+            "sub_cat":[
+                {"name":"Blender","dir":"/Blender"},
+                {"name":"Gimp","dir":"/Gimp"},
+                {"name":"InkSkape","dir":"/InkSkape"},
+                {"name":"Natron","dir":"/Natron"}
+            ]
+        }
+    ],
+    "parent_dir":"/home/antony"
+}
