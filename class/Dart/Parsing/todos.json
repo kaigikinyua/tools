@@ -1,7 +1,0 @@
-{ "todos":[
-    {"todo":"learn dart","time":"12:05","routine":true},
-    {"todo":"learn flutter","time":"6:00","routine":false},
-    {"todo":"learn models","time":"23:00","routine":false},
-    {"todo":"learn pyhton4","time":"1324","routine":false}
-    ]
-}

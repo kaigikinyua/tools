@@ -12,7 +12,9 @@
                 {"word":"C","weight":2},
                 {"word":"Golang","weight":8},
                 {"word":"Django","weight":9},
-                {"word":"Wordpress","weight":8}
+                {"word":"Wordpress","weight":8},
+                {"word":"Website","weight":4},
+                {"word":"How to","weight":3}
             ]
         },
         {
@@ -22,7 +24,8 @@
                 {"word":"Natron","weight":10},
                 {"word":"Gimp","weight":10},
                 {"word":"InkScape","weight":10},
-                {"word":"Adobe","weight":7}
+                {"word":"Adobe","weight":7},
+                {"word":"How to","weight":2}
             ]
         },
         {
@@ -33,7 +36,9 @@
                 {"word":"mac","weight":8},
                 {"word":"phone","weight":8},
                 {"word":"pc","weight":8},
-                {"word":"f1","weight":8}
+                {"word":"f1","weight":8},
+                {"word":"What if","weight":8},
+                {"word":"Universe","weight":5},
             ]
         }
     ]
