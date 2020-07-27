@@ -25,7 +25,11 @@
                 {"word":"Gimp","weight":10},
                 {"word":"InkScape","weight":10},
                 {"word":"Adobe","weight":7},
-                {"word":"How to","weight":2}
+                {"word":"How to","weight":2},
+                {"word":"Dell","weight":7},
+                {"word":"Optiplex","weight":10},
+                {"word":"gpu","weight":8},
+                {"word":"Graphics Card","weight":10}
             ]
         },
         {
@@ -38,7 +42,7 @@
                 {"word":"pc","weight":8},
                 {"word":"f1","weight":8},
                 {"word":"What if","weight":8},
-                {"word":"Universe","weight":5},
+                {"word":"Universe","weight":5}
             ]
         }
     ]
