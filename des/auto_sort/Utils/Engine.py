@@ -31,3 +31,20 @@ class Files:
     @staticmethod
     def write_json(file_path,data):
         pass
+
+class Storage:
+    @staticmethod
+    def get_free_space(dir_path):
+        pass
+
+    @staticmethod
+    def get_file_size(file_path):
+        pass
+
+    @staticmethod
+    def standardize_bytes(bytes):
+        pass
+
+    @staticmethod
+    def file_fits(dir_path,file_path):
+        pass
