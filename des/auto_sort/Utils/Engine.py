@@ -32,7 +32,23 @@ class Files:
     def write_json(file_path,data):
         pass
 
-class Storage:
+    @staticmethod
+    def cut_file(source_path,destination_path):
+        pass
+
+    @staticmethod
+    def copy_file(source_path,destination_path):
+        pass
+
+    @staticmethod
+    def file_exists(file_name,destination_path):
+        pass
+
+    @staticmethod
+    def delete_file(file_path):
+        pass 
+
+class Storage(Files):
     @staticmethod
     def get_free_space(dir_path):
         pass
