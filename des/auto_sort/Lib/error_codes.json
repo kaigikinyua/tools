@@ -1,0 +1,9 @@
+{
+    "libraries":[
+        {"name":"scan","codes":[
+            {"code":0,"message":"Successfully scaned whole dir"},
+            {"code":1,"message":"Could not open the directory"},
+            {"code":2,"message":"Error while scanning directory"}
+        ]}
+    ]
+}
