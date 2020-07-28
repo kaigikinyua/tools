@@ -34,11 +34,31 @@ class Logs:
 class Files:
     @staticmethod
     def load_json(file_path):
-        pass
+        data=False
+        try:
+            with open(file_path,"r") as f:
+                data=json.load(f)
+        except:
+            #deal with json exeptions
+            Files.read_file(file_path)
+        return data
+
     @staticmethod
     def write_json(file_path,data):
-        pass
-    
+        file_exists=Files.read_file(file_path)
+        if(file_exists==False):
+            pass
+            #Files.create_file(file_path)
+        else:
+            data=file_exists+data
+        try:
+            json.dumps(data,file_path)
+        except:
+            #deal with json exeptions
+            Files.read_file(file_path)
+        #return state
+
+
     @staticmethod
     def append_to_file(filepath,data):
         done=False
