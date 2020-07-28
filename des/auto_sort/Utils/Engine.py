@@ -2,16 +2,23 @@ import json
 class Notification:
     @staticmethod
     def success(message):
-        pass
+        Notification.output("Success: "+str(message))
+
     @staticmethod
     def error(message):
-        pass
+        Notification.output("Error: "+str(message))
+
     @staticmethod
     def notif(message):
-        pass
+        Notification.output(message)
+
     @staticmethod
     def loading():
         pass
+
+    @staticmethod
+    def output(message):
+        print(str(message))
 
 class Logs:
     @staticmethod
@@ -31,6 +38,37 @@ class Files:
     @staticmethod
     def write_json(file_path,data):
         pass
+    
+    @staticmethod
+    def append_to_file(filepath,data):
+        done=False
+        try:
+            f=open(filepath,"a")
+            f.write(data)
+            f.close()
+            done=True
+        except FileNotFoundError:
+            Notification.error("Could Not find file"+str(filepath))
+        except PermissionError:
+            Notification.error("Permission error")
+        except:
+            Notification.error("Unexpected error while trying to write to file"+str(filepath))
+        return done
+
+    @staticmethod
+    def read_file(filepath):
+        data=False
+        try:
+            f=open(filepath,"r")
+            data=f.readlines()
+            f.close()
+        except FileNotFoundError:
+            Notification.error("Could Not find the file"+str(filepath))
+        except PermissionError:
+            Notification.error("Permission error while reading file"+str(filepath))
+        except:
+            Notification.error("Unexpected error while reading file"+str(filepath))
+        return data
 
     @staticmethod
     def cut_file(source_path,destination_path):
