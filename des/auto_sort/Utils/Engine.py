@@ -23,10 +23,12 @@ class Notification:
 class Logs:
     @staticmethod
     def log_error(message):
-        pass
+        error={"time":Logs.get_curr_time(),"message":message}
+        Files.append_to_file("./Logs/errors.txt",error)
     @staticmethod
     def log(message):
-        pass
+        log={"time":Logs.get_curr_time(),"message":message}
+        Files.append_to_file("./Logs/program.txt")
     @staticmethod
     def get_curr_time():
         pass
