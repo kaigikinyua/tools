@@ -31,7 +31,8 @@ class Logs:
         Files.append_to_file("./Logs/program.txt")
     @staticmethod
     def get_curr_time():
-        pass
+        from datetime import datetime
+        return datetime.now()
 
 class Files:
     @staticmethod
