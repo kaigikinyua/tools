@@ -1,7 +1,16 @@
 import json
 import os
 import shutil
+import threading
 class Notification:
+    
+    """def threaded(func):
+        def innner_func(*args, **kwargs):
+            t=threading.Thread(target=func,args=(*args, **kwargs))
+            t.start()
+        return innner_func
+    """
+
     @staticmethod
     def success(message):
         Notification.output("Success: "+str(message))
@@ -14,14 +23,24 @@ class Notification:
     def notif(message):
         Notification.output(message)
 
+    #@threaded
     @staticmethod
-    def loading():
-        pass
+    def loading(message):
+        anim=[".","..","...","..."]
+        i=0
+        while True:
+            if(i<len(anim)):
+                print(str(message)+anim[i],end="\r")
+            else:
+                i=0
 
     @staticmethod
     def output(message):
         print(str(message))
 
+    @staticmethod
+    def warning(message):
+        print(str(message))
 class Logs:
     @staticmethod
     def log_error(message):
