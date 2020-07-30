@@ -133,15 +133,27 @@ class Files:
     @staticmethod
     def batch_delete(file_paths):
         for f in file_paths:
-            try:
-                os.remove(file_paths)
-            except FileNotFoundError:
-                Notification.error(str(f)+" does not exist")
-            except PermissionError:
-                Notification.error("Permission error while deleting the file"+str(f))
-            except:
-                Notification.error("A problem occurred while trying to delete the file"+str(f))
-
+            if(os.path.isfile(f)):
+                try:
+                    os.remove(file_paths)
+                except FileNotFoundError:
+                    Notification.error(str(f)+" does not exist")
+                except PermissionError:
+                    Notification.error("Permission error while deleting the file"+str(f))
+                except:
+                    Notification.error("A problem occurred while trying to delete the file"+str(f))
+            elif(os.path.isdir(f)):
+                pass
+            else:
+                Notification.error("Unknown directory content "+str(f))
+    
+    @staticmethod
+    def list_dir_contents(dir_path):
+        if(os.path.isdir(dir_path)):
+            contents=os.listdir(dir_path)
+            return contents
+        else:
+            return []
 
 class Storage(Files):
     @staticmethod
