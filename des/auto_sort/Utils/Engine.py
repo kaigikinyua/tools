@@ -1,4 +1,6 @@
 import json
+import os
+import shutil
 class Notification:
     @staticmethod
     def success(message):
@@ -99,15 +101,27 @@ class Files:
 
     @staticmethod
     def copy_file(source_path,destination_path):
-        pass
+        try:
+            shutil.copy(source_path,destination_path)
+        except FileExistsError:
+            Notification.error("File "+str(source_path)+"already exists in the directory "+str(destination_path))
+        except:
+            Notification.error("Failed to copy file "+str(source_path)+" to "+str(destination_path))
 
     @staticmethod
-    def file_exists(file_name,destination_path):
-        pass
+    def file_exists(file_path):
+        if(os.path.isfile(file_path)):
+            return True
+        else:
+            return False
 
     @staticmethod
     def delete_file(file_path):
-        pass 
+        if(Files.file_exists(file_path)):
+            Notification.error("Deleting file")
+        else:
+            Notification.error(str(file_path)+" does not exists")
+
 
 class Storage(Files):
     @staticmethod
