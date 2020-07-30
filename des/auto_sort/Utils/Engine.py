@@ -177,7 +177,9 @@ class Files:
 class Storage(Files):
     @staticmethod
     def get_free_space(dir_path):
-        pass
+        total,used,free=shutil.disk_usage(dir_path)
+        free_disk_space=Storage.standardize_bytes(free)
+        return free_disk_space
 
     @staticmethod
     def get_file_size(file_path):
@@ -198,8 +200,13 @@ class Storage(Files):
         else:
             file_size=float(bytes_size/gb)
             metric="GB"
-        return {"size":file_size,"metric":metric}
+        return {"size":file_size,"metric":metric,"bytes":bytes_size}
 
     @staticmethod
     def file_fits(dir_path,file_path):
-        pass
+        free_space=Storage.get_free_space(dir_path)
+        file_size=Storage.get_file_size(file_path)
+        if(free_space["bytes"]>file_size["bytes"]):
+            return True
+        else:
+            return False
