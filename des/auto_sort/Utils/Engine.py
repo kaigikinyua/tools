@@ -181,11 +181,24 @@ class Storage(Files):
 
     @staticmethod
     def get_file_size(file_path):
-        pass
+        return os.path.getsize(file_path)
 
     @staticmethod
-    def standardize_bytes(bytes):
-        pass
+    def standardize_bytes(bytes_size):
+        kb=1024
+        mb=kb*1024
+        gb=mb*1024
+        file_size=0;metric=""
+        if(bytes_size<kb):
+            file_size=float(bytes_size/kb)
+            metric="KB"
+        elif(bytes_size>mb and bytes_size<gb):
+            file_size=float(bytes_size/mb)
+            metric="MB"
+        else:
+            file_size=float(bytes_size/gb)
+            metric="GB"
+        return {"size":file_size,"metric":metric}
 
     @staticmethod
     def file_fits(dir_path,file_path):
