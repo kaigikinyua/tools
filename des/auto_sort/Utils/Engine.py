@@ -97,17 +97,23 @@ class Files:
 
     @staticmethod
     def cut_file(source_path,destination_path):
-        pass
+        if(Files.copy_file(source_path,destination_path)==True):
+            Files.delete_file(source_path)
+            return True
+        else:
+            return False
 
     @staticmethod
     def copy_file(source_path,destination_path):
+        res=False
         try:
             shutil.copy(source_path,destination_path)
+            res=True
         except FileExistsError:
             Notification.error("File "+str(source_path)+"already exists in the directory "+str(destination_path))
         except:
             Notification.error("Failed to copy file "+str(source_path)+" to "+str(destination_path))
-
+        return res
     @staticmethod
     def file_exists(file_path):
         if(os.path.isfile(file_path)):
@@ -118,9 +124,23 @@ class Files:
     @staticmethod
     def delete_file(file_path):
         if(Files.file_exists(file_path)):
-            Notification.error("Deleting file")
+            ans=Notification.warning("\a Do you want to delete file?\ny/n")
+            if(ans=="y" or ans=="Y"):
+                os.remove(file_path)
         else:
             Notification.error(str(file_path)+" does not exists")
+    
+    @staticmethod
+    def batch_delete(file_paths):
+        for f in file_paths:
+            try:
+                os.remove(file_paths)
+            except FileNotFoundError:
+                Notification.error(str(f)+" does not exist")
+            except PermissionError:
+                Notification.error("Permission error while deleting the file"+str(f))
+            except:
+                Notification.error("A problem occurred while trying to delete the file"+str(f))
 
 
 class Storage(Files):
