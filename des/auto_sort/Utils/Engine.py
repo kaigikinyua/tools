@@ -113,6 +113,7 @@ class Files:
         except:
             Notification.error("Unexpected error while reading file\n"+str(filepath))
         return data
+
     @staticmethod
     def create_file(filepath):
         file_created=False
@@ -181,6 +182,18 @@ class Files:
             else:
                 Notification.error("Unknown directory content "+str(f))
     
+    @staticmethod
+    def create_dir(path):
+        created_dir=False
+        if(os.path.isdir(path)==False):
+            try:
+                os.mkdir(path)
+                created_dir=True
+            except PermissionError:
+                Notification.error("Not enough permissions to create directory\n"+str(path))
+            except:
+                Notification.error("An error ocurred while trying to create the directory "+str(path))
+        return created_dir
     @staticmethod
     def list_dir_contents(dir_path):
         if(os.path.isdir(dir_path)):
