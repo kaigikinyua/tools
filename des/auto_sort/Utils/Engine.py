@@ -109,10 +109,25 @@ class Files:
         except FileNotFoundError:
             Notification.error("Could Not find the file"+str(filepath))
         except PermissionError:
-            Notification.error("Permission error while reading file"+str(filepath))
+            Notification.error("Permission error while reading file\n"+str(filepath))
         except:
-            Notification.error("Unexpected error while reading file"+str(filepath))
+            Notification.error("Unexpected error while reading file\n"+str(filepath))
         return data
+    @staticmethod
+    def create_file(filepath):
+        file_created=False
+        file_exists=Files.read_file(filepath)
+        if(file_exists==False):
+            try:
+                f=open(filepath,"w")
+                f.close()
+                file_created=True
+            except PermissionError:
+                Notification.error("Not enough permissions to create the file\n"+str(filepath))
+            except:
+                Notification.error("An error ocurred while creating the file\n"+str(filepath))
+        return file_created        
+
 
     @staticmethod
     def cut_file(source_path,destination_path):
