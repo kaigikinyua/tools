@@ -2,6 +2,8 @@ import json
 import os
 import shutil
 import threading
+class NotificationCodes:
+    codes={"warning":"\033[94m","error":"\033[93m","success":"\033[92m","normal":"\033[0m"}
 class Notification:
     
     """def threaded(func):
@@ -10,18 +12,24 @@ class Notification:
             t.start()
         return innner_func
     """
+    def outputCover(inner_func):
+        def inner_func(*args, **kwargs):
+            print(NotificationCodes.codes[normal])
+        return inner_func
 
     @staticmethod
+    @outputCover
     def success(message):
-        Notification.output("Success: "+str(message))
-
+        Notification.output(NotificationCodes.codes["success"]+"Success: "+str(message))
+    
     @staticmethod
+    @outputCover
     def error(message):
-        Notification.output("Error: "+str(message))
+        Notification.output(NotificationCodes.codes["error"]+"Error: "+str(message))
 
     @staticmethod
     def notif(message):
-        Notification.output(message)
+        Notification.output(NotificationCodes.codes["warning"]+str(message))
 
     #@threaded
     @staticmethod
