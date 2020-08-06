@@ -1,4 +1,6 @@
 from Utils.Engine import Files
+import os
+import shutil
 class SetUp:
     @staticmethod
     def setup_resources():
@@ -11,11 +13,24 @@ class SetUp:
 
     @staticmethod
     def factory_reset():
-        pass
+        if(os.path.isdir("./Reset_Logs")!=True):
+            os.mkdir("./Reset_Logs")
+        resets=os.listdir("./Reset_Logs")
+        num=0
+        for reset in resets:
+            r=reset.split('_')
+            num=r[len(r)-1]
+            num=int(num+1)
+        new_reset="./Reset_Logs/version_"+str(num)
+        os.mkdir(new_reset)
+        back_up=['./dir_dist.json','./key_words.json','./Logs']
+        for b in back_up:
+            if(os.path.isfile(b)):
+                shutil.copy(b,new_reset)
+            elif(os.path.isdir(b)):
+                print("Implement copy file contents")
 
-    @staticmethod
-    def setup_words():
-        pass
+                
 
 class ScanResources(SetUp):
     pass
