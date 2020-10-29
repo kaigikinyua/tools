@@ -8,7 +8,7 @@ class Files:
             return True
         except:
             return False
-    #delete file
+#TODO<delete file>
     @staticmethod
     def rename_file(self,filepath,newname):
         try:
@@ -16,11 +16,8 @@ class Files:
             return True
         except:
             return False
-    
-    @staticmethod 
-    def rename_folder(self,folderpath):
-        pass
-    
+
+#TODO<Renaming folder>
     @staticmethod
     def is_folder(self,folderpath):
         if(os.path.isdir(folderpath)):
@@ -46,7 +43,9 @@ class Files:
             return True
         Messages.error("Folder {f} does not exist".format(f=folderpath))
         return False
-#TODO create a logging system
+
+#TODO create a logging class
+
 class ProcessExec(Files):
     def run_setup():
         pass
@@ -61,15 +60,26 @@ class Messages:
     @staticmethod
     def success(message):
         print(message)
-
+    @staticmethod
+    def prompt(message):
+        message=str(message)
+        ans=input("{m}".format(m=message))
+        return ans
 class Coins:
-    def install_phase(self):
-        pass
+    def is_pre_install(self):
+        ans=Messages.prompt("Have you already installed coins on this Computer\ny/n\n->")
+        if(ans.lower()=="y"):
+            return False
+        return True
 
     def post_install(self):
+        #prompt to run .reg_file
         pass
 
     def pre_install(self):
+        #rename orant folder in C:\Orant to C:\Orant_Prev
+        #navigate to bgeneral and run set_up
+        #open manual on notepad
         pass
 
     def backup_orant_folder(self):
@@ -88,3 +98,9 @@ class Coins:
         pass
 
 if __name__=="__main__":
+    Messages.message("<=============Coins installer===============>")
+    coins=Coins()
+    if(coins.is_pre_install()==False):
+        coins.post_install()
+    else:
+        coins.pre_install()
