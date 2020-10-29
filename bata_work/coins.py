@@ -2,64 +2,93 @@ import os
 import shutil
 class Files:
     @staticmethod
-    def copy_file(self,filepath,copypath):
+    def copy_file(filepath,copypath):
         try:
             shutil.copy(filepath,copypath)
             return True
         except:
             return False
-#TODO<delete file>
     @staticmethod
-    def rename_file(self,filepath,newname):
+    def rename_file(filepath,newname):
         try:
             os.rename(filepath,newname)
             return True
         except:
             return False
-
-#TODO<Renaming folder>
     @staticmethod
-    def is_folder(self,folderpath):
+    def is_folder(folderpath):
         if(os.path.isdir(folderpath)):
             return True
         return False
     
     @staticmethod
-    def is_file(self,filepath):
+    def is_file(filepath):
         if(os.path.isfile(filepath)):
             return True
         return False
     
     @staticmethod
-    def file_exists(self,filepath):
+    def file_exists(filepath):
         if(Files.is_file(filepath)):
             return True
         Messages.error("File {f} does not exist".format(f=filepath))
         return False
 
     @staticmethod
-    def folder_exists(self,folderpath):
+    def folder_exists(folderpath):
         if(Files.is_folder(folderpath)):
             return True
         Messages.error("Folder {f} does not exist".format(f=folderpath))
         return False
 
-#TODO create a logging class
+    @staticmethod
+    def open_file_explorer(path):
+        ProcessExec.run_command("explorer {p}".format(p=path))
 
-class ProcessExec(Files):
-    def run_setup():
-        pass
+#TODO<Renaming folder>
+#TODO<delete file>
+#TODO<create a logging class|mechanism>
+
+class ProcessExec:
+    @staticmethod
+    def run_setup(path):
+        try:
+            result=ProcessExec.run_command("\\{ex}".format(ex=path))
+            if(result==True):
+                pass
+            else:
+                Messages.error("Setup {ex} encounterd an error while executing".format(ex=path))
+        except:
+            Messages.error("Could not run setup {ex}".format(ex=path))
+    @staticmethod
+    def run_command(command):
+        try:
+            x=os.system(command)
+            if(x==0):
+                return True
+            else:
+                Messages.error("The system encounterd an error while running the command {c}".format(c=command))
+                return False
+        except:
+            Messages.error("Could not execute command {c}".format(c=command))
+            return False
 
 class Messages:
     @staticmethod
     def message(message):
         print(message)
     @staticmethod
+    def warning(message):
+        print("!!Warning!!-----{m}".format(m=message))
+        #log warnings
+    @staticmethod
     def error(message):
-        print("Error:==={message}===".format(message=message))
+        print("!!Error:==={message}===".format(message=message))
+        #log errors
     @staticmethod
     def success(message):
         print(message)
+        #log success
     @staticmethod
     def prompt(message):
         message=str(message)
@@ -74,6 +103,7 @@ class Coins:
 
     def post_install(self):
         #prompt to run .reg_file
+        #
         pass
 
     def pre_install(self):
