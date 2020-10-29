@@ -94,6 +94,7 @@ class Messages:
         message=str(message)
         ans=input("{m}".format(m=message))
         return ans
+
 class Coins:
     def is_pre_install(self):
         ans=Messages.prompt("Have you already installed coins on this Computer\ny/n\n->")
@@ -103,6 +104,9 @@ class Coins:
 
     def post_install(self):
         #prompt to run .reg_file
+        #platform to check developer patch
+        #create shorcut
+        #access coins folder
         #
         pass
 
