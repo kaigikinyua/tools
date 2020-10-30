@@ -72,7 +72,14 @@ class ProcessExec:
         except:
             Messages.error("Could not execute command {c}".format(c=command))
             return False
-
+    @staticmethod
+    def openExplorer(path):
+        openExplorer=ProcessExec.run_command("start {p}".format(p=path))
+        if(openExplorer):
+            return True
+        else:
+            Messages.error("Could not open file explorer to {p}".format(path))
+            return False
 class Messages:
     @staticmethod
     def message(message):
@@ -112,9 +119,18 @@ class Coins:
 
     def pre_install(self):
         #rename orant folder in C:\Orant to C:\Orant_Prev
-        #navigate to bgeneral and run set_up
+        Files.rename_file("./test/orant",'./test/orant_prev')
+        win7=Coins.is_windows_7()
+        if(win7):
+            Messages.message("Running coins for windows 7")
+            ProcessExec.run_command("nautilus --browser /home/antony/Desktop")
+            ProcessExec.run_command("./test/coinswin7/setup.sh")
+        else:
+            Messages.message("Running coins for windows 10")
+            ProcessExec.run_command("nautilus --browser /home/antony/Documents")
+            ProcessExec.run_command("./test/coinswin10/setup.sh")
+        #open manual in browser
         #open manual on notepad
-        pass
 
     @staticmethod
     def backup_orant_folder():
@@ -132,16 +148,22 @@ class Coins:
 
     @staticmethod
     def copy_shorcut():
-        pass
+        print("Copying coins shortcut shorcut")
 
-    def coins_platform_version(self):
+    @staticmethod
+    def is_windows_7():
         platform=Messages.prompt("Which windows platform version is this computer running on\n1.Windows 10 \n2.Windows 7\n->")
         if(int(platform)==2):
-            Coins.developer_patch()
+            return True
+        return False
     
     @staticmethod
-    def developer_patch():
-        pass
+    def developer_patch_location():
+        Messages.warning("Running developer patch")
+        #if(ProcessExec.openExplorer("Open to explorer to bgen\..\windwos7 patch")):
+        #    pass
+        #else:
+        #    Messages.error("Could not open location of dev patch")
 
 if __name__=="__main__":
     Messages.message("<=============Coins installer===============>")

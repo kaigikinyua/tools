@@ -1,6 +1,6 @@
 {
     "todos":[
         {"todo":"create a shortcut in windows and copy it to . directory"},
-        {"todo":"export the relevant registry paths for coins and copy it to . directory"},
+        {"todo":"export the relevant registry paths for coins and copy it to . directory"}
     ]
 }
