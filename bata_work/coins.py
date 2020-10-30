@@ -123,14 +123,13 @@ class Coins:
         win7=Coins.is_windows_7()
         if(win7):
             Messages.message("Running coins for windows 7")
-            ProcessExec.run_command("nautilus --browser /home/antony/Desktop")
+            #ProcessExec.run_command("nautilus --browser /home/antony/Desktop")
             ProcessExec.run_command("./test/coinswin7/setup.sh")
         else:
             Messages.message("Running coins for windows 10")
-            ProcessExec.run_command("nautilus --browser /home/antony/Documents")
+            #ProcessExec.run_command("nautilus --browser /home/antony/Documents")
             ProcessExec.run_command("./test/coinswin10/setup.sh")
-        #open manual in browser
-        #open manual on notepad
+        #open manual in browser || notepad
 
     @staticmethod
     def backup_orant_folder():
