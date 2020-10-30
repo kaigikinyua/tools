@@ -103,11 +103,11 @@ class Coins:
         return True
 
     def post_install(self):
-        #prompt to run .reg_file
-        #platform to check developer patch
-        #create shorcut
+        #prompt to run ./assets/paths.reg_file
+        #check platform in order to run dev patch
+        #copy the files to the recommended folders
+        #create shorcut to start in [Coins start folder]
         #access coins folder
-        #
         pass
 
     def pre_install(self):
