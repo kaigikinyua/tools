@@ -116,19 +116,31 @@ class Coins:
         #open manual on notepad
         pass
 
-    def backup_orant_folder(self):
-        pass
+    @staticmethod
+    def backup_orant_folder():
+        if(Files.is_folder("C:\\orant") or Files.is_folder("C:\\Orant")):
+            renamed=Files.rename_file("C:\\orant","C:\\orant_backup")
+            if(renamed):
+                return True
+            return False
+        return True
+        
 
     def registry_variables(self):
+        #run [reg import path to file -> ./assets/paths.reg]
         pass
 
-    def create_shorcut(self):
+    @staticmethod
+    def copy_shorcut():
         pass
 
     def coins_platform_version(self):
-        pass
-
-    def developer_patch(self):
+        platform=Messages.prompt("Which windows platform version is this computer running on\n1.Windows 10 \n2.Windows 7\n->")
+        if(int(platform)==2):
+            Coins.developer_patch()
+    
+    @staticmethod
+    def developer_patch():
         pass
 
 if __name__=="__main__":
