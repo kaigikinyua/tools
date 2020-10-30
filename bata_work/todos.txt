@@ -1,0 +1,13 @@
+[
+    ====MockUp====
+    1.Flawless execution. No errors.
+    2.All assets [reg,shortcuts and command execution]
+    3.Manuals notepad
+]
+
+[
+    ===Version===
+    1.Packaging for windows 7|10 and 32(X86)
+    2.Open setups locations
+    3.Manuals webpage
+]
