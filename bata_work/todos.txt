@@ -11,3 +11,10 @@
     2.Open setups locations
     3.Manuals webpage
 ]
+
+[
+    ===Testing===
+    1.Copying correct files
+    2.Renaming and Backingup relevant resources
+    3.Variable changes and settings ->{Location of various setups}
+]
