@@ -110,11 +110,16 @@ class Coins:
         return True
 
     def post_install(self):
-        #prompt to run ./assets/paths.reg_file
+        #prompt to run ./assets/paths.reg_file #ProcessExec.run_command("./paths.reg")
         #check platform in order to run dev patch
+        #prompt to add to which users desktop 
+        #Messages.prompt("Select which user to add the shortcut to the desktop")
+        #list users in a dictionary
+        #ProcessExec.run_command("cp location of the shortcut to users desktop")
         #copy the files to the recommended folders
         #create shorcut to start in [Coins start folder]
         #access coins folder
+        #post_install complete
         pass
 
     def pre_install(self):
@@ -130,6 +135,7 @@ class Coins:
             #ProcessExec.run_command("nautilus --browser /home/antony/Documents")
             ProcessExec.run_command("./test/coinswin10/setup.sh")
         #open manual in browser || notepad
+        #pre_install complete
 
     @staticmethod
     def backup_orant_folder():
@@ -142,7 +148,6 @@ class Coins:
         
 
     def registry_variables(self):
-        #run [reg import path to file -> ./assets/paths.reg]
         pass
 
     @staticmethod
