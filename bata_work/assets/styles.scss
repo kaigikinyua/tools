@@ -1,0 +1,32 @@
+//defaults
+*{
+    padding:0px;
+    margin:0px;
+}
+body{
+    overflow-x:hidden;
+}
+a{
+    text-decoration: none;
+    color:currentColor;
+}
+//components
+nav{
+    position: fixed;
+    top:0px;margin:0px;
+    width:100vw;
+    padding:10px;
+    background:gray;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+ul.list{
+    list-style: none;
+    a li{
+        display: inline-block;
+    }
+}
+section.full{
+    position: relative;
+    width:100vw;height:100vh;
+}

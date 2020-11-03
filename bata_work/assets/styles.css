@@ -1,0 +1,41 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+nav {
+  position: fixed;
+  top: 0px;
+  margin: 0px;
+  width: 100vw;
+  padding: 10px;
+  background: gray;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+ul.list {
+  list-style: none;
+}
+
+ul.list a li {
+  display: inline-block;
+}
+
+section.full {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+/*# sourceMappingURL=styles.css.map */
