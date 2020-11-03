@@ -2,6 +2,7 @@
 *{
     padding:0px;
     margin:0px;
+    font-family: Arial;
 }
 body{
     overflow-x:hidden;
@@ -9,6 +10,33 @@ body{
 a{
     text-decoration: none;
     color:currentColor;
+}
+//fonts
+h3.title{
+    font-weight: lighter;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+h3.barner{
+    font-size: 25px;
+}
+h3.title::before{
+    content: '#';
+    color:lightseagreen;
+    margin:0px 5px;
+}
+h3.sub_title{
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+p{
+    padding:0px 10px;
+}
+p.warning{
+    background:crimson;
+    color:white;
+    padding:10px;
+    margin:5px 0px;
 }
 //components
 nav{
@@ -19,14 +47,45 @@ nav{
     background:gray;
     display:grid;
     grid-template-columns: 1fr 1fr;
+    z-index: 10;
+    text-align: center;
 }
-ul.list{
+ul.links{
     list-style: none;
     a li{
         display: inline-block;
     }
 }
+
+div.margin_top{
+    height:100px;
+}
+ol.steps{
+    margin-left: 25px;
+    padding:10px;
+}
 section.full{
     position: relative;
-    width:100vw;height:100vh;
+    width:100vw;
+    div.content{
+        position: relative;
+        left:50%;
+        padding:0px 10px;
+        transform: translateX(-50%);
+        max-width: 800px;
+        height:auto;
+        border-left: 1px solid lightseagreen;
+        h3.title{
+            margin-left: -35px;
+            background:white;
+        }
+    }
+}
+
+
+//responsiveness
+@media only screen and (max-width:600px){
+    div.content{
+        margin:0px 5px;
+    }
 }
