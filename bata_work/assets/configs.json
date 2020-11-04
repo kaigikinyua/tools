@@ -1,0 +1,14 @@
+{
+    "server":"",
+    "files":[
+        {"filename":"","path":"","copy_to":""},
+        {"filename":"","path":"","copy_to":""}
+    ],
+    "win_10":[{"path":""}],
+    "win_7":[
+        {
+            "path":"",
+            "dev_patch_path":""
+        }
+    ]
+}
