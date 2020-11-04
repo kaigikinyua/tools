@@ -8,6 +8,12 @@ class SystemCommands:
     open_manual_command="iexplorer"
     open_file_explorer="start"
     execute="./"
+class Configs:
+    coins_win_7=""
+    coins_win_10=""
+    server=""
+    def __init__(self):
+        pass
 """
 
 class Errors:
