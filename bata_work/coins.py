@@ -1,7 +1,7 @@
 import os
 import shutil
 from threading import *
-
+from multiprocessing import *
 """
 #final touches to help run on debug and prod mode
 class SystemCommands:
@@ -83,6 +83,7 @@ class ProcessExec:
             error="Could not run setup {ex}".format(ex=path)
             Error.error_logs+={"error":error}
             Messages.error(error)
+
     @staticmethod
     def run_command(command):
         try:
@@ -99,6 +100,16 @@ class ProcessExec:
             Errors.error_logs={"error":error}
             Messages.error()
             return False
+
+    #untested        
+    @staticmethod
+    def new_process_command(command):
+        new_process=""
+        try:
+            new_process=Process(ProcessExec.run_command(command),args=())
+            new_process.start()
+        except:
+            Messages.error("Could not start process {p}".format(p=command))
 
     @staticmethod
     def openExplorer(path):
@@ -199,8 +210,9 @@ if __name__=="__main__":
     open_manual=Messages.prompt("Would you like to open the manual on a browser\ny/n\n->")
     if(open_manual.lower()=="y"):
         #TODO -> Browser should be its own process/thread
-        browser=Thread(target=ProcessExec.run_command("firefox ./assets/coins.html"),args=())
-        browser.start() 
+        ProcessExec.new_process_command("firefox ./assets/manual/coins.html")
+        #browser=Thread(target=ProcessExec.run_command("firefox ./assets/manual/coins.html"),args=())
+        #browser.start() 
         #Process.Exec.run_command("iexplorer ./assets/coins.html")   
     if(coins.is_pre_install()==False):
         coins.post_install()
