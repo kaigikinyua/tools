@@ -1,6 +1,7 @@
 import os
 import shutil
 from threading import *
+
 """
 #final touches to help run on debug and prod mode
 class SystemCommands:
@@ -101,6 +102,7 @@ class ProcessExec:
         else:
             Messages.error("Could not open file explorer to {p}".format(path))
             return False
+
 class Messages:
     @staticmethod
     def message(message):
@@ -142,7 +144,6 @@ class Coins:
         #access coins folder
         #post_install complete
         pass
-
     def pre_install(self):
         #rename orant folder in C:\Orant to C:\Orant_Prev
         Files.rename_file("./test/orant",'./test/orant_prev')
@@ -166,10 +167,6 @@ class Coins:
                 return True
             return False
         return True
-        
-
-    def registry_variables(self):
-        pass
 
     @staticmethod
     def copy_shorcut():
@@ -193,11 +190,14 @@ class Coins:
 if __name__=="__main__":
     Messages.message("<=============Coins installer===============>")
     coins=Coins()
-    open_manual=Messages.prompt("Would you like to open the manual on a browser")
-    if(open_manual):
-        ProcessExec.run_command("firefox ./assets/coins.html")
+    open_manual=Messages.prompt("Would you like to open the manual on a browser\ny/n\n->")
+    if(open_manual.lower()=="y"):
+        #TODO -> Browser should be its own process/thread
+        browser=Thread(target=ProcessExec.run_command("firefox ./assets/coins.html"),args=())
+        browser.start() 
         #Process.Exec.run_command("iexplorer ./assets/coins.html")   
     if(coins.is_pre_install()==False):
         coins.post_install()
     else:
         coins.pre_install()
+    print(Errors.error_logs)
