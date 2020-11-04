@@ -1,5 +1,17 @@
 import os
 import shutil
+from threading import *
+"""
+#final touches to help run on debug and prod mode
+class SystemCommands:
+    open_manual_command="iexplorer"
+    open_file_explorer="start"
+    execute="./"
+"""
+
+class Errors:
+    error_logs=[]
+
 class Files:
     @staticmethod
     def copy_file(filepath,copypath):
@@ -57,9 +69,13 @@ class ProcessExec:
             if(result==True):
                 pass
             else:
-                Messages.error("Setup {ex} encounterd an error while executing".format(ex=path))
+                error="Setup {ex} encounterd an error while executing".format(ex=path)
+                Errors.error_logs+={"error":error}
+                Messages.error(error)
         except:
-            Messages.error("Could not run setup {ex}".format(ex=path))
+            error="Could not run setup {ex}".format(ex=path)
+            Error.error_logs+={"error":error}
+            Messages.error(error)
     @staticmethod
     def run_command(command):
         try:
@@ -67,11 +83,16 @@ class ProcessExec:
             if(x==0):
                 return True
             else:
-                Messages.error("The system encounterd an error while running the command {c}".format(c=command))
+                error="The system encounterd an error while running the command {c}".format(c=command)
+                Errors.error_logs+={"error":error}
+                Messages.error(error)
                 return False
         except:
-            Messages.error("Could not execute command {c}".format(c=command))
+            error="Could not execute command {c}".format(c=command)
+            Errors.error_logs={"error":error}
+            Messages.error()
             return False
+
     @staticmethod
     def openExplorer(path):
         openExplorer=ProcessExec.run_command("start {p}".format(p=path))
@@ -126,6 +147,7 @@ class Coins:
         #rename orant folder in C:\Orant to C:\Orant_Prev
         Files.rename_file("./test/orant",'./test/orant_prev')
         win7=Coins.is_windows_7()
+        runPatch=False
         if(win7):
             Messages.message("Running coins for windows 7")
             #ProcessExec.run_command("nautilus --browser /home/antony/Desktop")
@@ -134,7 +156,6 @@ class Coins:
             Messages.message("Running coins for windows 10")
             #ProcessExec.run_command("nautilus --browser /home/antony/Documents")
             ProcessExec.run_command("./test/coinswin10/setup.sh")
-        #open manual in browser || notepad
         #pre_install complete
 
     @staticmethod
@@ -164,7 +185,7 @@ class Coins:
     @staticmethod
     def developer_patch_location():
         Messages.warning("Running developer patch")
-        #if(ProcessExec.openExplorer("Open to explorer to bgen\..\windwos7 patch")):
+        #if(ProcessExec.openExplorer("Open to explorer to bgen\..\windows7 patch")):
         #    pass
         #else:
         #    Messages.error("Could not open location of dev patch")
@@ -172,6 +193,10 @@ class Coins:
 if __name__=="__main__":
     Messages.message("<=============Coins installer===============>")
     coins=Coins()
+    open_manual=Messages.prompt("Would you like to open the manual on a browser")
+    if(open_manual):
+        ProcessExec.run_command("firefox ./assets/coins.html")
+        #Process.Exec.run_command("iexplorer ./assets/coins.html")   
     if(coins.is_pre_install()==False):
         coins.post_install()
     else:
