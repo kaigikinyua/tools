@@ -24,8 +24,10 @@ class Files:
     def copy_file(filepath,copypath):
         try:
             shutil.copy(filepath,copypath)
+            Messages.success("File {f} copied to {c}".format(f=filepath,c=copypath))
             return True
         except:
+            Messages.error("Could not copy {f} to {c}".format(f=filepath,c=copypath))
             return False
     @staticmethod
     def rename_file(filepath,newname):
@@ -155,12 +157,19 @@ class Coins:
         #prompt to add to which users desktop 
         #Messages.prompt("Select which user to add the shortcut to the desktop")
         #list users in a dictionary
+        #Copy the files to the recommended folders
+        #load patch files from ./assets/configs/configs.json
+        patch_files=[
+            {"from":"./test/source/test.dll","to":"./test/destination"},
+            {"from":"./test/source/tsname.ora","to":"./test/destination"}
+            ]
+        for f in patch_files:
+            Files.copy_file(f["from"],f["to"])
         #ProcessExec.run_command("cp location of the shortcut to users desktop")
-        #copy the files to the recommended folders
-        #create shorcut to start in [Coins start folder]
         #access coins folder
         #post_install complete
         pass
+
     def pre_install(self):
         #rename orant folder in C:\Orant to C:\Orant_Prev
         Files.rename_file("./test/orant",'./test/orant_prev')
