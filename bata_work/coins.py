@@ -168,7 +168,6 @@ class Coins:
         #ProcessExec.run_command("cp location of the shortcut to users desktop")
         #access coins folder
         #post_install complete
-        pass
 
     def pre_install(self):
         #rename orant folder in C:\Orant to C:\Orant_Prev
@@ -178,10 +177,12 @@ class Coins:
         if(win7):
             Messages.message("Running coins for windows 7")
             #ProcessExec.run_command("nautilus --browser /home/antony/Desktop")
+            #Windows ProcessExec.run_command("start \\\\remotename\directory")
             ProcessExec.run_command("./test/coinswin7/setup.sh")
         else:
             Messages.message("Running coins for windows 10")
             #ProcessExec.run_command("nautilus --browser /home/antony/Documents")
+            #Windows ProcessExec.run_command("start \\\\remotename\directory")
             ProcessExec.run_command("./test/coinswin10/setup.sh")
         #pre_install complete
 
@@ -222,7 +223,7 @@ if __name__=="__main__":
         ProcessExec.new_process_command("firefox ./assets/manual/coins.html")
         #browser=Thread(target=ProcessExec.run_command("firefox ./assets/manual/coins.html"),args=())
         #browser.start() 
-        #Process.Exec.run_command("iexplorer ./assets/coins.html")   
+        #Does not work Process.Exec.run_command("iexplorer ./assets/coins.html")   
     if(coins.is_pre_install()==False):
         coins.post_install()
     else:
