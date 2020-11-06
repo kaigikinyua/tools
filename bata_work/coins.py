@@ -229,3 +229,5 @@ if __name__=="__main__":
     else:
         coins.pre_install()
     print(Errors.error_logs)
+
+#a new erra is about to beggin
