@@ -15,7 +15,6 @@ class Configs:
     def __init__(self):
         pass
 """
-
 class Errors:
     error_logs=[]
 
@@ -76,7 +75,7 @@ class ProcessExec:
         try:
             result=ProcessExec.run_command("\\{ex}".format(ex=path))
             if(result==True):
-                pass
+                Messages.success("Successfuly ran {c}".format(c=path))
             else:
                 error="Setup {ex} encounterd an error while executing".format(ex=path)
                 Errors.error_logs+={"error":error}
@@ -133,7 +132,7 @@ class Messages:
     @staticmethod
     def error(message):
         print("!!Error:==={message}===".format(message=message))
-        #log errors
+        Errors.error_logs+=["!!Error:==={message}===".format(message=message)]
     @staticmethod
     def success(message):
         print(message)
@@ -198,10 +197,10 @@ class Coins:
     @staticmethod
     def copy_shorcut():
         print("Copying coins shortcut shorcut")
-        
+
     @staticmethod
     def reg_edit():
-        reg_success=ProcessExec.run_command("regedit /s ./assets/coins.reg")
+        reg_success=ProcessExec.run_command("regedit /s .\\assets\\coins7.reg")
         if(reg_success):
             Messages.success("Modified registry paths")
             return True
@@ -239,5 +238,4 @@ if __name__=="__main__":
     else:
         coins.pre_install()
     print(Errors.error_logs)
-
 #a new erra is about to beggin
