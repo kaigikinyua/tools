@@ -198,6 +198,16 @@ class Coins:
     @staticmethod
     def copy_shorcut():
         print("Copying coins shortcut shorcut")
+        
+    @staticmethod
+    def reg_edit():
+        reg_success=ProcessExec.run_command("regedit /s ./assets/coins.reg")
+        if(reg_success):
+            Messages.success("Modified registry paths")
+            return True
+        else:
+            Messages.error("Could not add registry entries")
+            return False
 
     @staticmethod
     def is_windows_7():
