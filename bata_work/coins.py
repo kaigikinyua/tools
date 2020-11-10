@@ -65,9 +65,8 @@ class Files:
     def open_file_explorer(path):
         ProcessExec.run_command("explorer {p}".format(p=path))
 
-#TODO<Renaming folder>
-#TODO<delete file>
-#TODO<create a logging class|mechanism>
+#TODO <delete file>
+#TODO <create a logging class|mechanism>
 
 class ProcessExec:
     @staticmethod
