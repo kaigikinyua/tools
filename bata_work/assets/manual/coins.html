@@ -31,21 +31,21 @@
                 <div class="instructions">
                     <div class="section">
                         <h3 class="sub_title">First coins setup run</h3>
-                        <ol class="numlist">
+                        <ol class="steps">
                             <li>Forms Runtime</li>
                             <li>GUI common files</li>
                             <li>Tools utilities</li>
                             <li>Assistant common files</li>
                             <li>System support files</li>
                             <li>Required support files</li>
-                            <!--<li class="shortcut"></li>-->
+                            <li class="shortcut">Shortcut</li>
                         </ol>
                         <h3 class="sub_title">Second coins setup run</h3>
-                        <ol class="numlist">
+                        <ol class="steps">
                             <li>Reports Runtime</li>
                         </ol>
                         <h3 class="sub_title">Developer patch(3rd run)</h3>
-                        <ol class="numlist">
+                        <ol class="steps">
                             <li>Forms runtime</li>
                             <li>Reports runtime</li>
                             <li>Server patch</li>
@@ -63,14 +63,27 @@
     </section>
     <section class="full" id="part_two">
             <div class="content">
-                <h3 class="title">Registry Paths</h3>
+                <h3 class="title">Final Touches</h3>
                 <div class="instructions">
                     <div class="section">
-                        <h3 class="sub_title">System Configuration</h3>
-                        <p class="warning">This only applies after a successful installation of coins or you want to correct the registry paths</p>
+                        <h3 class="sub_title">Registry paths</h3>
                         <ol class="steps">
-                            <li>Run the coins.bat</li>
-                            <li>Choose the 2nd installation option</li>
+                            <li>Forms60_PATH: U:\FORMS</li>
+                            <li>FORMS60_TMP: C:\TEMP</li>
+                            <li>REPORTS60_PATH: U:\REPORTS; U:\FORMS</li>
+                            <li>REPORTS60_TMP: C:\TEMP</li>
+                            <li>SQLPATH: U:\SQLS</li>
+                            <li>LOCAL: COINSKENYA</li>
+                        </ol>
+                        <h3 class="sub_title">Desktop Shortcut</h3>
+                        <ol class="steps">
+                            <li>Create a shortcut on the desktop</li>
+                            <li>Path: C:\orant\bin\ifrun60.exe bso017</li>
+                            <li>Name the shortcut Coins</li>
+                            <li>Rightclick the shortcut and set start in U:\forms</li>
+                            <li>Change icon to the path U:\forms\shoe.ico</li>
+                            <li>Apply the changes</li>
+                            <p class="warning">Make sure you have mapped to drive \\batapower\coins or \\192.168.15.28\coins</p>
                         </ol>
                     </div>
                 </div>

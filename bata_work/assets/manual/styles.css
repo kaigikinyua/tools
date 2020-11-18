@@ -32,6 +32,9 @@ h3.title::before {
 h3.sub_title {
   margin-bottom: 5px;
   font-weight: normal;
+  color: lightseagreen;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 p {
@@ -75,6 +78,16 @@ div.margin_top {
 ol.steps {
   margin-left: 25px;
   padding: 10px;
+}
+
+ol.steps li {
+  padding: 5px;
+}
+
+ol.steps li.shortcut {
+  background: lightseagreen;
+  color: white;
+  padding: 7px;
 }
 
 section.full {
