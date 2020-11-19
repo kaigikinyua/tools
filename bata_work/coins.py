@@ -150,21 +150,20 @@ class Coins:
         return True
 
     def post_install(self):
-        #prompt to run ./assets/paths.reg_file #ProcessExec.run_command("./paths.reg")
-        #check platform in order to run dev patch
-        #prompt to add to which users desktop 
-        #Messages.prompt("Select which user to add the shortcut to the desktop")
-        #list users in a dictionary
         #Copy the files to the recommended folders
         #load patch files from ./assets/configs/configs.json
         patch_files=[
+            #{"from":"\\batagen\tools\softwate\COINS\developer path\Developer 6i Path 17\tnsnames.ora","to":" C:\orant\net80\admin\sample"},
+            #{"from":"\\batagen\tools\softwate\COINS\developer path\DLL\*.*","to":"C:\orant\bin"},
+            #{"from":"\\batagen\tools\softwate\COINS\developer path\DLL\win7 patch\*.*","to": "C:\orant\bin"},
+            #copy shortcut from the assets folder to the desktop
             {"from":"./test/source/test.dll","to":"./test/destination"},
-            {"from":"./test/source/tsname.ora","to":"./test/destination"}
+            {"from":"./test/source/tsname.ora","to":"./test/destination"},
             ]
         for f in patch_files:
             Files.copy_file(f["from"],f["to"])
+        #prompt to run ./assets/paths.reg_file #ProcessExec.run_command("./paths.reg")
         #ProcessExec.run_command("cp location of the shortcut to users desktop")
-        #access coins folder
         #post_install complete
 
     def pre_install(self):
