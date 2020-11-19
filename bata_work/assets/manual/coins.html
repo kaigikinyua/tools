@@ -11,26 +11,27 @@
         <div class="barner"><h3 class="barner">Coins Installer</h3></div>
         <div class="links">
             <ul class="links">
-                <a href="#part_one"><li>Configurations and Packages</li></a>
-                <a href="#part_two"><li>Registry Paths</li></a>
-                <a href="#part_three"><li>Files Edit</li></a>
+                <a href="#part_one"><li>Installation Packages</li></a>
+                <a href="#part_two"><li>DLL Patching</li></a>
+                <a href="#part_three"><li>Final Touches</li></a>
             </ul>
         </div>
     </nav>
     <section class="full" id="part_one">
             <div class="margin_top"></div>
             <div class="content">
-                <h3 class="title">Coins Init Details</h3>
+                <!--<h3 class="title">Coins Init Details</h3>
                 <div class="instructions">
                     <div class="section">
                         Companyname -> BATA SHOE KENYA PLC
                         Installation type -> Custom installation
                     </div>
-                </div>
+                </div>-->
                 <h3 class="title">Installation packages</h3>
                 <div class="instructions">
                     <div class="section">
                         <h3 class="sub_title">First coins setup run</h3>
+                        <p class="note">Oracle Form Server & Custom installation</p>
                         <ol class="steps">
                             <li>Forms Runtime</li>
                             <li>GUI common files</li>
@@ -41,6 +42,7 @@
                             <li class="shortcut">Shortcut</li>
                         </ol>
                         <h3 class="sub_title">Second coins setup run</h3>
+                        <p class="note">Oracle Report Server & Custom installation</p>
                         <ol class="steps">
                             <li>Reports Runtime</li>
                         </ol>
@@ -62,6 +64,23 @@
             </div>
     </section>
     <section class="full" id="part_two">
+            <div class="content">
+                <h3 class="title">DLL Patching</h3>
+                <div class="instructions">
+                    <p>Copy the following files to the respective folders</p>
+                    <p class="warning">
+                        Replace $PATH with \\batageneral\tools\software\COINS\developer patch\Developer 6i Patch 17
+                    </p>
+                    <ol class="steps">
+                        <li>$PATH\TNSNAMES.ORA -> C:\orant\net80\admin</li>
+                        <li>$PATH\TNSNAMES.ORA -> C:\orant\net80\admin\sample</li>
+                        <li>$PATH\DLL\*.* -> C:\orant\bin</li>
+                        <li>$PATH\DLL\win 7 patch\*.* -> C:\orant\bin</li>
+                    </ol>
+                </div>
+            </div>
+    </section>
+    <section class="full" id="part_three">
             <div class="content">
                 <h3 class="title">Final Touches</h3>
                 <div class="instructions">
@@ -87,12 +106,6 @@
                         </ol>
                     </div>
                 </div>
-            </div>
-    </section>
-    <section class="full" id="part_three">
-            <div class="content">
-                <h3 class="title">Files Edit</h3>
-                <div class="content"></div>
             </div>
     </section>
 </body>
