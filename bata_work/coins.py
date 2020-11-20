@@ -155,7 +155,6 @@ class Coins:
         setup_loc="./test/coinswin7/"
         setup_file=setup_loc+"setup.sh"
         #ProcessExec.run_command("nautilus {c}".format(c=setup_loc))
-
     
     @staticmethod
     def coins_win10():
@@ -174,7 +173,7 @@ class Coins:
             #copy shortcut from the assets folder to the desktop
             {"from":"./test/source/test.dll","to":"./test/destination"},
             {"from":"./test/source/tsname.ora","to":"./test/destination"},
-            ]
+        ]
         for f in patch_files:
             Files.copy_file(f["from"],f["to"])
         #prompt to run ./assets/paths.reg_file #ProcessExec.run_command("./paths.reg")
