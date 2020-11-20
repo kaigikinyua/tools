@@ -149,13 +149,28 @@ class Coins:
             return False
         return True
 
+    @staticmethod
+    def coins_win7():
+        #setup_loc=""
+        setup_loc="./test/coinswin7/"
+        setup_file=setup_loc+"setup.sh"
+        #ProcessExec.run_command("nautilus {c}".format(c=setup_loc))
+
+    
+    @staticmethod
+    def coins_win10():
+        #setup_loc=""
+        setup_loc="./test/coinswin10/"
+        setup_file=setup_loc+"setup.sh"
+        #ProcessExec.run_command("nautilus {c}".format(c=setup_loc))
+
     def post_install(self):
         #Copy the files to the recommended folders
         #load patch files from ./assets/configs/configs.json
         patch_files=[
-            #{"from":"\\batagen\tools\softwate\COINS\developer path\Developer 6i Path 17\tnsnames.ora","to":" C:\orant\net80\admin\sample"},
-            #{"from":"\\batagen\tools\softwate\COINS\developer path\DLL\*.*","to":"C:\orant\bin"},
-            #{"from":"\\batagen\tools\softwate\COINS\developer path\DLL\win7 patch\*.*","to": "C:\orant\bin"},
+            #{"from":"\\batagen\tools\software\COINS\developer path\Developer 6i Path 17\tnsnames.ora","to":"C:\orant\net80\admin\sample"},
+            #{"from":"\\batagen\tools\software\COINS\developer path\DLL\*.*","to":"C:\orant\bin"},
+            #{"from":"\\batagen\tools\software\COINS\developer path\DLL\win7 patch\*.*","to":"C:\orant\bin"},
             #copy shortcut from the assets folder to the desktop
             {"from":"./test/source/test.dll","to":"./test/destination"},
             {"from":"./test/source/tsname.ora","to":"./test/destination"},
@@ -173,14 +188,16 @@ class Coins:
         runPatch=False
         if(win7):
             Messages.message("Running coins for windows 7")
+            Coins.coins_win7()
             #ProcessExec.run_command("nautilus --browser /home/antony/Desktop")
             #Windows ProcessExec.run_command("start \\\\remotename\directory")
-            ProcessExec.run_command("./test/coinswin7/setup.sh")
+            #ProcessExec.run_command("./test/coinswin7/setup.sh")
         else:
             Messages.message("Running coins for windows 10")
+            Coins.coins_win10()
             #ProcessExec.run_command("nautilus --browser /home/antony/Documents")
             #Windows ProcessExec.run_command("start \\\\remotename\directory")
-            ProcessExec.run_command("./test/coinswin10/setup.sh")
+            #ProcessExec.run_command("./test/coinswin10/setup.sh")
         #pre_install complete
 
     @staticmethod
@@ -193,12 +210,8 @@ class Coins:
         return True
 
     @staticmethod
-    def copy_shorcut():
-        print("Copying coins shortcut shorcut")
-
-    @staticmethod
     def reg_edit():
-        reg_success=ProcessExec.run_command("regedit /s .\\assets\\coins7.reg")
+        reg_success=ProcessExec.run_command("regedit /s .\\assets\\system\paths.reg")
         if(reg_success):
             Messages.success("Modified registry paths")
             return True
@@ -236,4 +249,3 @@ if __name__=="__main__":
     else:
         coins.pre_install()
     print(Errors.error_logs)
-#a new erra is about to beggin
