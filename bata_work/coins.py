@@ -17,13 +17,15 @@ class Configs:
 """
 class Errors:
     error_logs=[]
+    @staticmethod
     def log_errors():
         data=Files.read_file("./Logs/errors.txt")
         if(data):
-            for error in error_logs:
-                pass
+            Files.write_to_file("./Logs/errors.txt",data)
+            Messages.message("Logged errors to ./Logs/errors.txt")
         else:
             Files.create_file("./Logs/errors.txt")
+            Errors.log_errors()
 
             
 
