@@ -17,8 +17,29 @@ class Configs:
 """
 class Errors:
     error_logs=[]
+    def log_errors():
+        if(Files.file_exists("./Logs/erros.txt")):
+            Files.
+        else:
+            Files.
 
 class Files:
+    @staticmethod
+    def read_file(filepath):
+        if(Files.file_exists(filepath)==False):
+            data=False
+            try:
+                f=open(filepath,"r")
+                data=f.readlines()
+                f.close()
+            except PermissionError:
+                Messages.error("Not enough permissions to read file {f}".format(f=filepath))
+            except:
+                Messages.error("An unknown error occurred while reading file {f}".format(f=filepath))
+            return data           
+        else:
+            Messages.error("File {f} does not exist".format(f=filepath))
+            return False
     @staticmethod
     def copy_file(filepath,copypath):
         try:
