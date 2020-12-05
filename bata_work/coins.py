@@ -18,10 +18,14 @@ class Configs:
 class Errors:
     error_logs=[]
     def log_errors():
-        if(Files.file_exists("./Logs/erros.txt")):
-            Files.
+        data=Files.read_file("./Logs/errors.txt")
+        if(data):
+            for error in error_logs:
+                pass
         else:
-            Files.
+            Files.create_file("./Logs/errors.txt")
+
+            
 
 class Files:
     @staticmethod
@@ -41,6 +45,36 @@ class Files:
             Messages.error("File {f} does not exist".format(f=filepath))
             return False
     @staticmethod
+    def create_file(filepath):
+        if(Files.file_exists(filepath)):
+            Messages.error("File {f} already exists")
+            return False
+        else:
+            try:
+                f=open(filepath,"w")
+                f.close()
+                return True
+            except PermissionError:
+                Messages.error("Not enough permissions to create file {f}".format(f=filepath))
+            except:
+                Messages.error("An unkwon error occurred while creating file {f}".format(f=filepath))
+            return False
+
+    @staticmethod
+    def write_to_file(filepath,data):
+        if(Files.file_exists(filepath)):
+            try:
+                f=open(filepath,"w")
+                f.write(data)
+                f.close()
+                return True
+            except PermissionError:
+                Messages.error("Not enough permissions to create file {f}".format(f=filepath))
+            except:
+                Messages.error("An unkwon error occurred while creating file {f}".format(f=filepath))
+            return False
+
+    @staticmethod
     def copy_file(filepath,copypath):
         try:
             shutil.copy(filepath,copypath)
@@ -49,6 +83,7 @@ class Files:
         except:
             Messages.error("Could not copy {f} to {c}".format(f=filepath,c=copypath))
             return False
+
     @staticmethod
     def rename_file(filepath,newname):
         try:
@@ -56,6 +91,7 @@ class Files:
             return True
         except:
             return False
+
     @staticmethod
     def is_folder(folderpath):
         if(os.path.isdir(folderpath)):
