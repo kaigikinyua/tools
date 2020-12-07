@@ -3,6 +3,7 @@
     1.Flawless execution. No errors.
     2.All assets [reg,shortcuts and command execution]
     3.Manuals notepad
+    4.Registry file types for windows 10 and windows 7
 ]
 
 [
@@ -18,3 +19,4 @@
     2.Renaming and Backingup relevant resources
     3.Variable changes and settings ->{Location of various setups}
 ]
+
