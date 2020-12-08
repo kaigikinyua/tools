@@ -307,3 +307,4 @@ if __name__=="__main__":
     else:
         coins.pre_install()
     print(Errors.error_logs)
+#boj siht etah i
