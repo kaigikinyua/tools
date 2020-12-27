@@ -1,0 +1,18 @@
+{
+    "tables":[
+        {
+            "table_name":"table_name",
+            "values":[
+                {"key":"value","key2":"value"}....
+            ],
+            "schema_locked":false
+        },
+        {
+            "table_name":"table_name",
+            "values":[
+                {"key","value","key2":"value"}
+            ],
+            "schema_locked":true
+        }
+    ]
+}
