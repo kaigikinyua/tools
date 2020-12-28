@@ -2,9 +2,7 @@ const express=require("express")
 const path=require("path")
 const app=express()
 
-//const DataBase=require("./modules/database")
-//import  DataBase from './modules/database';
-//app.set("view engine","ejs")
+const Files=require("./modules/database")
 
 app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname+"/views/index.html"))
@@ -12,7 +10,14 @@ app.get("/",(req,res)=>{
 
 app.get('/fetch/all/:database',(req,res)=>{
     console.log(req.params.database)
-    res.end(JSON.stringify({"data":"[{'key':'value1'}]"}))
+    var f=Files({filename:"test.json",type:"fetch_all",callback:(param)=>{
+        if(param==false||param==undefined||param==null){}
+        else{
+            res.end(JSON.stringify(param))
+        }
+    }})
+    //console.log(f)
+    //res.end(JSON.stringify({"data":"[{'key':'value1'}]"}))
 });
 
 app.get('/fetch/filter/:database/:query',(req,res)=>{
