@@ -9,9 +9,12 @@ app.get("/",(req,res)=>{
 });
 
 app.get('/fetch/all/:database',(req,res)=>{
-    console.log(req.params.database)
-    var f=Files({filename:"test.json",type:"fetch_all",callback:(param)=>{
-        if(param==false||param==undefined||param==null){}
+    console.log(req.params.database+".json")
+    Files({filename:req.params.database+".json",type:"fetch_all",callback:(param)=>{
+        if(param==false||param==undefined||param==null){
+            //console.log(res)
+            res.end(JSON.stringify({"error":"Error while fetching data"}))
+        }
         else{
             res.end(JSON.stringify(param))
         }
