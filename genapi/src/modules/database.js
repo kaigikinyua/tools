@@ -1,38 +1,21 @@
 const fs=require("fs")
 const path=require("path")
 
-module.exports=function({filename,type,callback}){
-    console.log("Hello world")
-    fetch_all=()=>{
-        console.log("fetching all")
-        filename="/Data/"+filename
-        var read=fs.readFile(path.join(__dirname+filename),'utf-8',(err,data)=>{
+class Files{
+    //filename=null
+    //data=null
+    constructor(filename){
+        this.filename="/Data/"+filename
+    }
+    readFile(callback){
+        fs.readFile(path.join(__dirname+this.filename),'utf-8',(err,data)=>{
             if(err){
-                console.error(err)
+                console.log(err)
                 callback(false)
-            }else{
-                console.log(data)
-                console.log("data read from "+filename)
-                callback(JSON.parse(data))
             }
-        });
-        return {}
-    }
-    if(type=="fetch_all"){
-        return fetch_all()
-    }
-}
-
-/*class Files{
-    //filename;data;
-    constructor(filename){this.filename="../Data/"+filename}
-    readFile(){
-        var data=fs.createReadStream(this.filename,(err,data)=>{
-            if(err){
-                this.data=false
-            }else{
+            else{
                 this.data=data
-                console.log(data)
+                callback(JSON.parse(data))
             }
         })
         return this.data;
@@ -40,4 +23,22 @@ module.exports=function({filename,type,callback}){
     //createFile(){}
     //deleteFile(){}
 
-}*/ 
+} 
+
+module.exports=function({filename,type,callback}){
+    fetch_all=()=>{
+        var f=new Files(filename)
+        f.readFile((data)=>{
+            if(data!=false){
+                callback(data)
+            }else{
+                callback(null)
+            }
+        })
+        return {}
+    }
+    if(type=="fetch_all"){
+        return fetch_all()
+    }
+}
+

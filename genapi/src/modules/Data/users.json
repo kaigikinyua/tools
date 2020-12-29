@@ -1,0 +1,6 @@
+{
+    "users":[
+        {"name":"James bond","age":40,"carrer":"Undercover agent"},
+        {"name":"Shakespear","age":400,"carrer":"Poet"}
+    ]
+}
