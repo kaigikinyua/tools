@@ -3,7 +3,7 @@ const path=require("path")
 
 class Files{
     constructor(filename){
-        this.filename="/Data/"+filename
+        this.filename="/Data/"+filename+".json"
     }
     readFile(callback){
         fs.readFile(path.join(__dirname+this.filename),'utf-8',(err,data)=>{

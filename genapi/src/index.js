@@ -9,8 +9,7 @@ app.get("/",(req,res)=>{
 });
 
 app.get('/fetch/all/:database',(req,res)=>{
-    console.log(req.params.database+".json")
-    Files({filename:req.params.database+".json",type:"fetch_all",callback:(param)=>{
+    Files({filename:req.params.database,type:"fetch_all",callback:(param)=>{
         if(param==false||param==undefined||param==null){
             //console.log(res)
             res.end(JSON.stringify({"error":"Error while fetching data"}))
@@ -25,6 +24,7 @@ app.get('/fetch/all/:database',(req,res)=>{
 
 app.get('/fetch/filter/:database/:query',(req,res)=>{
     var database=req.params.database;
+    //Files({filename:database})
     var query=req.params.query
     console.log(query)
     res.end(JSON.stringify({"data":"['key':'fetch filter not implemented']"}))
