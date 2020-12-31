@@ -36,5 +36,18 @@
             ],
             "note_to_self":"search for girls last names"
         }   
+    ],
+    "emails":[
+            {"domain":"@example.com"},
+            {"domain":"@testmail.com"},
+            {"domain":"@gen.com"},
+            {"domain":"@mars.gov"},
+            {"domain":"@fun.org"},
+            {"domain":"@dev.org"}
+    ],
+    "charcters":[
+        {"alpha":"abcdefghijklmnopqrstuvwxyz"},
+        {"numbers":"1234567890"},
+        {"special":"!@#$%^&*()"}
     ]
 }
