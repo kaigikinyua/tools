@@ -2,59 +2,46 @@ from random import randrange
 import json
 import requests
 
-class MyRandom:
+class Files:
+    #feature:add mock up for profile photos
     @staticmethod
-    def random_users(number):
-        male_names=MyRandom.get_mock_up_data("male")
-        female_names=MyRandom.get_mock_up_data("female")
-        Gen_Users=[]
-        if(male_names!=False and female_names!=False): 
-            for i in range(number):
-                rand_gender=randrange(0,3)
-                f_name="";l_name=""
-                if(rand_gender==0):
-                    user=MyRandom.gen_user(male_names)
-                else:
-                    user=MyRandom.gen_user(female_names)
+    def fetch_mock_up(field):
+        try:
+            with open('names.json','r') as f:
+                data=json.load(f)
+                return data[field]
+        except:
+            return False
+    @staticmethod
+    def export_users(filename,gen_data):
+        exported=False
+        try:
+            with open(filename,'w') as f:
+                d=json.dump({"users":gen_data},f)
+            exported=True
+        except:
+            print("Error while exporting users to {f}".format(f=filename))
+        return exported           
 
-                domains=MyRandom.get_mock_up_data("emails")
-                d=domains[randrange(0,len(domains))]["domain"]
-                
-                user["email"]=user["firstname"].lower()+user["lastname"].lower()+d
-                Gen_Users.append(user)
-        else:
-            print("Error while getting usernames and domains from ./users.json")
-            Gen_Users=False
-        return Gen_Users
-    
+class User:
     @staticmethod
-    def gen_user(dataset):
+    def gen_fulluser(dataset):
         fNameSize=len(dataset[0]["first"])#-1
         lNameSize=len(dataset[1]["last"])#-1
         f_name=dataset[0]["first"][randrange(0,fNameSize)]["name"]
         l_name=dataset[1]["last"][randrange(0,lNameSize)]["name"]
-        password=MyRandom.random_pass(8)
-        return {"username":"{f} {l}".format(f=f_name,l=l_name),"firstname":f_name,"lastname":l_name,"email":"","password":password}
-
+        user={
+            "username":"{f} {l}".format(f=f_name,l=l_name),
+            "firstname":f_name,"lastname":l_name,
+            "email":User.gen_email(f_name,l_name),
+            "password":User.gen_pass(8),
+            "phone":User.gen_phone(10)
+        }
+        return user
     @staticmethod
-    def random_phone(number,digits):
-        phone_numbers=[]
-        for i in range(number):
-            phone=randrange(0,digits)
-            phone_numbers.append(phone)
-        return phone_numbers
-    @staticmethod
-    def random_age(number,age_range):
-        ages=[]
-        for i in range(number):
-            age=randrange(0,age_range+1)
-            ages.append(age)
-        return ages 
-    
-    @staticmethod
-    def random_pass(pass_size):
+    def gen_pass(size):
         password=None
-        characters=MyRandom.get_mock_up_data('charcters')
+        characters=Files.fetch_mock_up('charcters')
         if(characters!=False):
             alpha=characters[0]["alpha"][0:randrange(0,len(characters[0]["alpha"]))]
             numbers=characters[1]["numbers"][0:randrange(0,len(characters[1]["numbers"]))]
@@ -66,22 +53,60 @@ class MyRandom:
             password=False
         return password
 
+    @staticmethod
+    def gen_email(f_name,l_name):
+        domains=Files.fetch_mock_up("emails")
+        email=None
+        if(domains!=False):
+            d=domains[randrange(0,len(domains))]["domain"]
+            email=f_name.lower()+l_name.lower()+d
+            return email
+        else:
+            email=False
+        return email
 
     @staticmethod
-    def get_mock_up_data(field):
-        try:
-            with open('names.json','r') as f:
-                data=json.load(f)
-                return data[field]
-        except:
-            return False
+    def gen_phone(size):
+        phone=""
+        for i in range(size):
+            phone+=(str(randrange(0,10)))
+        phone="+"+str(phone)
+        return phone
 
     @staticmethod
-    def save_data(filename):
-        pass
+    def gen_age():
+        return randrange(0,100)
+
+class MyRandom:
+    @staticmethod
+    def random_users(number):
+        male_names=Files.fetch_mock_up("male")
+        female_names=Files.fetch_mock_up("female")
+        Gen_Users=[]
+        if(male_names!=False and female_names!=False): 
+            for i in range(number):
+                rand_gender=randrange(0,3)
+                if(rand_gender==0):
+                    user=User.gen_fulluser(male_names)
+                else:
+                    user=User.gen_fulluser(female_names)
+                Gen_Users.append(user)
+        else:
+            print("Error while getting usernames and domains from ./users.json")
+            Gen_Users=False
+        return Gen_Users
+    
+
 
 if __name__=="__main__":
     print("Generating users....")
     users=MyRandom.random_users(100)
     for user in users:
-        print(user) 
+        print(user)
+    ans=input("Export generated users?\ny/n")
+    if(ans.lower()=="y"):
+        ans=input("Enter file name to export to\n")
+        if(len(ans)>0):
+            export_state=Files.export_users(ans+".json",users)
+            if(export_state==True):
+                print("Export is successfull") 
