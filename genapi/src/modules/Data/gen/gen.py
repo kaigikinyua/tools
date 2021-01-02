@@ -79,6 +79,11 @@ class User:
 
 class MyRandom:
     @staticmethod
+    def terminal_commands(*args, **kwargs):
+        #number of users
+        #usertypes
+        
+    @staticmethod
     def random_users(number):
         male_names=Files.fetch_mock_up("male")
         female_names=Files.fetch_mock_up("female")
@@ -95,7 +100,7 @@ class MyRandom:
             print("Error while getting usernames and domains from ./users.json")
             Gen_Users=False
         return Gen_Users
-    
+
 
 
 if __name__=="__main__":
