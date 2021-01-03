@@ -101,8 +101,6 @@ class MyRandom:
             Gen_Users=False
         return Gen_Users
 
-
-
 if __name__=="__main__":
     print("Generating users....")
     users=MyRandom.random_users(100)
