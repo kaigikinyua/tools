@@ -3,9 +3,9 @@ from . import views
 urlpatterns = [
     #shopsassets
     path('shopsinventory/',views.shopsInventory,name="shopsinventory"),
-    path('shopassets/<str:shopname>',views.ShopAssets.as_view(),name="shopassets")
     #shopasset/<shopid>
-    #receive
+    path('shopassets/<str:shopname>',views.ShopAssets.as_view(),name="shopassets")
+    #receive/shopid
     #despatch
     
 ]
