@@ -56,4 +56,4 @@ class Authentication:
             if(request.user.is_authenticated):
                 return True
         except:
-            return False 
+            return False
