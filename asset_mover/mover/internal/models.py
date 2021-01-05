@@ -21,7 +21,7 @@ class ClearedOwner(models.Model):
     owner=models.CharField(max_length=50)
     itemSN=models.CharField(max_length=50)
     cleared=models.BooleanField(default=False)
-    clearedDate=models.DateField(auto_now=True, auto_now_add=True)
+    clearedDate=models.DateField(auto_now=True, auto_now_add=False)
     location=models.CharField(max_length=50)
 
 
