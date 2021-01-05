@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="{% static 'css/pages/page.css'%}">
 {% endblock css_links %}
 
-{% block barner_text %}Asset Mover{% endblock barner_text %}
+{% block barner_text %}{{user.username}}{% endblock barner_text %}
 
 {% block links %}
-    <a href="#"><li class="active">{{user.username}}</li></a>
+    <a href="#"><li onclick="open_sidenav()">Menu</li></a>
     <a href="#"><li>Receiving</li></a>
     <a href="#"><li>Despatch</li></a>
     <a href="#"><li>Inventory</li></a>
@@ -21,11 +21,16 @@
         <div class="sidenav_barner">
             <div class="avatar"></div>
             <div class="details">{{user.username}}</div>
+            <br/>
+            <div style="display:block;">
+                <button class="menu_btn">Logout</button>
+            </div>
         </div>
         <div class="nav_body">
             <div class="menu">
                 <button class="menu_btn">Settings</button>
                 <button class="menu_btn">Shops</button>
+                <button class="menu_btn">Internal</button>
             </div>
         </div>
     </div>
@@ -47,11 +52,17 @@
     </div>
     <script>
         function close_sidenav(){
-            console.log("sidenav close")
+            //console.log("sidenav close")
             var nav=document.getElementById("sidenav");
             var cover=document.getElementById("cover");
             nav.style.display="none"
             cover.style.display="none"
+        }
+        function open_sidenav(){
+            var nav=document.getElementById("sidenav");
+            var cover=document.getElementById("cover")
+            nav.style.display="block"
+            cover.style.display="block"
         }
     </script>
 
