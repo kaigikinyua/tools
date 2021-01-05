@@ -1,0 +1,39 @@
+//colors [{red-pink},{white-gray}]
+    //light
+    //mid_light
+    //dark
+    //mid_dark
+//alignment mixin
+@mixin center_h{
+    left:50%;
+    transform: translateX(-50%);
+}
+@mixin center_v{
+    top:50%;
+    transform: translateY(-50%);
+}
+@mixin middle{
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+//buttons
+@mixin big_button{
+    border:1px solid transparent;
+    padding:10px;
+    border-radius: 10px;
+    margin:10px;
+}
+@mixin btn_default{
+    border:1px solid transparent;
+    border-radius: 10px;
+    outline:none;
+}
+//fonts
+@mixin par_small{}
+@mixin par_mid {}
+@mixin par_big {}
+//card mixins
+@mixin dark_element{}
+@mixin bright_element {}
+

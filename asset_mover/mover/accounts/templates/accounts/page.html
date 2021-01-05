@@ -1,0 +1,58 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block css_links %}
+    <!--<link rel="stylesheet" href="{% static 'static/css/index.css'%}">-->
+    <link rel="stylesheet" href="{% static 'css/pages/page.css'%}">
+{% endblock css_links %}
+
+{% block barner_text %}Asset Mover{% endblock barner_text %}
+
+{% block links %}
+    <a href="#"><li class="active">{{user.username}}</li></a>
+    <a href="#"><li>Receiving</li></a>
+    <a href="#"><li>Despatch</li></a>
+    <a href="#"><li>Inventory</li></a>
+{% endblock links %}
+
+{% block application %}
+    <div class="sidenav" id="sidenav">
+        <div class="sidenav_barner">
+            <div class="avatar"></div>
+            <div class="details">{{user.username}}</div>
+        </div>
+        <div class="nav_body">
+            <div class="menu">
+                <button class="menu_btn">Settings</button>
+                <button class="menu_btn">Shops</button>
+            </div>
+        </div>
+    </div>
+    <div class="cover" id="cover" onclick="close_sidenav()"></div>
+    <div class="main_application">
+        {% for inventory in inventories %}
+            <div class="inventory">
+                <div class="sec_title"><h1>{{inventory.title}}</h1></div>
+                <div class="inv_body">
+                    {% for item in inventory.items %}
+                        <div class="item">
+                            <div>{{item.desc}}</div>
+                            <div>{{item.sn}}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <script>
+        function close_sidenav(){
+            console.log("sidenav close")
+            var nav=document.getElementById("sidenav");
+            var cover=document.getElementById("cover");
+            nav.style.display="none"
+            cover.style.display="none"
+        }
+    </script>
+
+{% endblock application %}

@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css_links %}
+    <!--<link rel="stylesheet" href="{% static 'static/css/index.css'%}">-->
+    <link rel="stylesheet" href="{% static 'css/pages/index.css'%}">
+{% endblock css_links %}
+
+{% block barner_text %}Asset Mover{% endblock barner_text %}
+
+{% block links %}
+    <a href="#"><li class="active">Home</li></a>
+    <a href="#"><li>Login</li></a>
+{% endblock links %}
+
+{% block application %}
+    <div class="landing">
+        <div class="card_img"></div>
+        <div class="card_text">
+            <h1 class="text_h1">Keeping You Organized</h1>
+            <p>Hello World</p>
+            <button class="call_to_action">Login</button>
+        </div>
+    </div>
+{% endblock application %}
