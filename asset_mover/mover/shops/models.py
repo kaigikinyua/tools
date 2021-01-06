@@ -27,6 +27,8 @@ class SimCard(models.Model):
     puk1=models.CharField(max_length=50)
     puk2=models.CharField(max_length=50)
     #location
+    def __str__(self):
+        return "{name} {sn} {num}".format(name=self.shopname,sn=self.sn, num=self.phone_num)
 #Data Sim top up
 
 class ClearedShop(models.Model):

@@ -4,6 +4,7 @@ class UserItem(models.Model):
     itemName=models.CharField(max_length=50)
     def __str__(self):
         return self.itemName
+        
 class Owner(models.Model):
     currentOwner=models.CharField(max_length=100)
     itemDesc=models.CharField(max_length=50)
