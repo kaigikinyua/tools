@@ -22,6 +22,7 @@ shopSheet['C1']="Shopname"
 shopSheet['D1']="Device Description"
 shopSheet['E1']="Serial Number"
 shopSheet['F1']="Comment"
+
 for col in shops_data:
     shopSheet['A'+str(start)]=start-1
     shopSheet['B'+str(start)]=datetime.date.today()

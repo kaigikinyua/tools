@@ -9,6 +9,8 @@ class Owner(models.Model):
     itemDesc=models.CharField(max_length=50)
     itemSN=models.CharField(max_length=200)
     date=models.CharField(max_length=50)
+    def __str__(self):
+        return "{o} {d} {sn}".format(o=self.currentOwner,d=self.itemDesc,sn=self.itemSN)
 
 class PC(models.Model):
     owner=models.CharField(max_length=50)
@@ -17,6 +19,8 @@ class PC(models.Model):
     ram=models.IntegerField()
     cpu=models.CharField(max_length=50)
     activated=models.BooleanField(default=True)
+    def __str__(self):
+        return "{o} {p} {m}".format(o=self.owner,p=self.cpu,m=self.pcModel)
 
 class ClearedOwner(models.Model):
     owner=models.CharField(max_length=50)
@@ -24,5 +28,6 @@ class ClearedOwner(models.Model):
     cleared=models.BooleanField(default=False)
     clearedDate=models.DateField(auto_now=True, auto_now_add=False)
     location=models.CharField(max_length=50)
-
+    def __str__(self):
+        return "{o} {sn} {cl}".format(o=self.owner,sn=self.itemSN,cl=self.cleared)
 
