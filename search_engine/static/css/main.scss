@@ -38,7 +38,7 @@ input.submit{
     color:white;
 }
 div.auto_predict{
-    height:50px;
+    height:40px;
     background:lightgray;
     max-width: 500px;
     position: relative;
@@ -46,6 +46,29 @@ div.auto_predict{
     transform: translateX(-50%);
     margin:50px 0px;
     border-radius: 30px;
+    padding:5px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    small{
+        font-size: 0.96em;
+        margin:2px;
+        padding:3px;
+        background: white;
+        border-radius: 10px;
+        flex-shrink:0;
+        cursor: pointer;
+    }
+}
+div.auto_predict::-webkit-scrollbar{
+    width:1px;
+}
+div.auto_predict::-webkit-scrollbar-track{
+    background:1px solid black;
+}
+div.auto_predict::-webkit-scrollbar-thumb{
+    background:1px solid black;
 }
 input.colormode{
 
