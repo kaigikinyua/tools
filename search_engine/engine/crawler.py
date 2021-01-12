@@ -1,5 +1,5 @@
 import requests
-from utilities.Files import *
+from utilities.Util import Files
 class WebPage:
     def __init__(self,url):
         self.url=url
