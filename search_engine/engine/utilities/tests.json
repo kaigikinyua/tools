@@ -1,6 +1,6 @@
 {
-    "searches":[
-        {"search_sentence":"","key_words":"","results":[]},
-        {"search_sentence":"","key_words":"","results":[]}
+    "urls":[
+        {"url":"https://google.com"},
+        {"url":"https://gmail.com"}
     ]
 }

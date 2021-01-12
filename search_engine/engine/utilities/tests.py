@@ -13,8 +13,8 @@ class FilesTest(unittest.TestCase):
                 self.data=json.load(f)
         except:
             print("Error while locating test.json")
-        f=open("dump.json",'w')
-        f.close()
+        #f=open("dump.json",'w')
+        #f.close()
 
     def test_loadJson(self):
         f=Files("tests.json")
@@ -25,11 +25,11 @@ class FilesTest(unittest.TestCase):
         print(self.data)
         f=Files("dump.json")
         d=f.exportJson(self.data)
-        self.assertEqual(d,True)
-        #dump_data=f.loadJson()
-        #t=Files("tests.json")
-        #prev_data=t.loadJson()
-        #self.assertEqual(prev_data,dump_data)
+        #self.assertEqual(d,True)
+        dump_data=f.loadJson()
+        t=Files("tests.json")
+        prev_data=t.loadJson()
+        self.assertEqual(prev_data,dump_data)
 
 if __name__=="__main__":
     unittest.main()

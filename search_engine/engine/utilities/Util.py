@@ -9,20 +9,21 @@ class Files:
         try:
             with open(self.filepath,"r") as f:
                 data=json.load(f)
+        #IOWrapper exception for unserialized json data
         except:
-            print("Error while loading json from file {f}".format(f=self.filepath))
+            Messages.error("Could not load json from {p}".format(p=self.filepath))
         return data
 
     def exportJson(self,data):
-        res=None
+        res=False
         try:
             with open(self.filepath,"w") as f:
-                json.dump(f,data)
-            res=True
+                json.dump(data,f)
+                res=True
         except:
-            print("Error while exporting data to file {f}".format(f=self.filepath))
-            res=False
+            Messages.error("Could not export json to {p}".format(p=self.filepath))
         return res
+
 class Messages:
     @staticmethod
     def error(message):
@@ -30,10 +31,10 @@ class Messages:
     @staticmethod
     def warning(message):
         print("Warning: {m}".format(m=message))
-    
     @staticmethod
     def success(message):
         print("Sucess: {m}".format(m=message))
+
 """
 class Logger:
     def log(self,logfile):
