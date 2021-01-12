@@ -14,12 +14,15 @@ class Files:
         return data
 
     def exportJson(self,data):
+        res=None
         try:
-            with open(filepath,"w") as f:
+            with open(self.filepath,"w") as f:
                 json.dump(f,data)
+            res=True
         except:
             print("Error while exporting data to file {f}".format(f=self.filepath))
-
+            res=False
+        return res
 class Messages:
     @staticmethod
     def error(message):
