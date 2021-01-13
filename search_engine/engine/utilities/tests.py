@@ -22,7 +22,6 @@ class FilesTest(unittest.TestCase):
         self.assertEqual(data,self.data)
 
     def test_exportJson(self):
-        print(self.data)
         f=Files("dump.json")
         d=f.exportJson(self.data)
         #self.assertEqual(d,True)

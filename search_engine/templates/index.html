@@ -8,20 +8,23 @@
 </head>
 <body>
     <div class="search">
-        <div class="search_box">
+        <div class="search_box" id="sEngine">
             <div class="header"><h1 class="title">
                 <i>S</i>Engine</h1>
                 <input class="colormode" type="radio" name="darkmode" id="darkmode" checked="true"/>
                 <input class="colormode" type="radio" name="darkmode" id="lightmode"/>
             </div>
-            <div class="auto_predict" id="auto_predict"></div>
+            <div class="auto_predict" id="auto_predict">
+                <small class="search_h" v-for="s in search" v-on:click="addToSearch">{{s}}</small>
+            </div>
             <div class="input">
-                <input class="main" type="text" placeholder="Search..." id="search"/>
+                <input class="main" type="text" placeholder="Search..." id="search"  v-model="user_search" v-on:keyup="match_search"/>
                 <input class="submit" type="submit" value="Search">
             </div>
         </div>
     </div>
 </body>
+<script src="../static/js/vue.js"></script>
 <script src="../static/js/index.js"></script>
 <script src="../static/js/theme.js"></script>
 </html>
