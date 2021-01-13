@@ -15,7 +15,7 @@
                 <input class="colormode" type="radio" name="darkmode" id="lightmode"/>
             </div>
             <div class="auto_predict" id="auto_predict">
-                <small class="search_h" v-for="s in search" v-on:click="addToSearch">{{s}}</small>
+                <small class="search_h" v-for="s in search" v-on:click="addToSearch">[{s}]</small>
             </div>
             <div class="input">
                 <input class="main" type="text" placeholder="Search..." id="search"  v-model="user_search" v-on:keyup="match_search"/>
@@ -25,6 +25,7 @@
     </div>
 </body>
 <script src="../static/js/vue.js"></script>
-<script src="../static/js/index.js"></script>
+<!--<script type="module" src="../static/js/configs.js"></script>-->
+<script type="module" src="../static/js/index.js"></script>
 <script src="../static/js/theme.js"></script>
 </html>
