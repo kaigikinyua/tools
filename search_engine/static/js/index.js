@@ -8,6 +8,7 @@ new Vue({
             "Typescript","Duct tape programmer","Formula 1 championship","ReactJs for beginners","James Bond"
         ],
         user_search:"",
+        result:"",
         server_call:false,
     },
     methods:{
@@ -19,7 +20,10 @@ new Vue({
         },
         consult_server(){
             console.log(this.user_search)
-           ServerSearch.fetch_search(server.baseUrl+"/search/"+this.user_search)
+           var s=new Ajax(server.baseUrl+"/search/"+this.user_search)
+           s.fetch_json(data=>{
+            this.result=data.message
+           })
         },
         addToSearch(e){
             var search=document.getElementById("search")
@@ -43,13 +47,3 @@ new Vue({
         }
     }
 });
-
-
-class ServerSearch{
-    static fetch_search(url){
-        var a=new Ajax(url)
-        a.fetch_json((data)=>{
-            console.log(data.sentence)
-        })
-    }
-}

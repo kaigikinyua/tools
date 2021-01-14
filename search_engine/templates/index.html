@@ -16,6 +16,7 @@
             </div>
             <div class="auto_predict" id="auto_predict">
                 <small class="search_h" v-for="s in search" v-on:click="addToSearch">[{s}]</small>
+                <small v-model="result">[{result}]</small>
             </div>
             <div class="input">
                 <input class="main" type="text" placeholder="Search..." id="search"  v-model="user_search" v-on:keyup="match_search"/>

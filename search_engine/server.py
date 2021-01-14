@@ -10,7 +10,7 @@ def index():
 
 @app.route('/search/<sentence>',methods=['GET'])
 def search(sentence):
-    response=jsonify(sentence="helloworld")
+    response=jsonify(message=sentence)
     #return jsonify({"name":"Hello World"})
     response.headers.add("Access-Control-Allow-Origin",'*')
     return response
@@ -18,5 +18,6 @@ def search(sentence):
 #news route
 #trending route
 app.run()
+app.debug=True
 ##
 ###
