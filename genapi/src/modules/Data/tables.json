@@ -1,0 +1,16 @@
+{
+    "tables":[
+        {
+            "table_name":"table_name",
+            "keys":[{"users":[
+                        "username",
+                        "email",
+                        "password",
+                        {"posts":["date","caption","file_format"]}
+                    ]
+                }
+            ],
+            "schema_locked":false
+        }
+    ]
+}

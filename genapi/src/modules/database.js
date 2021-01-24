@@ -42,7 +42,7 @@ function filter({field,value,operand,data}){
     //return data
 } 
 class Database{
-    static tables:(database)=>{
+    static tables=(database)=>{
         var f=new Files(database);
         var data=f.readFile((data)=>{
             if (data!=false){
