@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Asset Mover</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/main.css'%}"/>
+        {% block css_links %}{% endblock %}
+    </head>
+    <body>
+    <div class="topnav">
+        <div class="barner">
+            <h2 class="barner">
+                {% block barner_text %}{% endblock %}
+            </h2>
+        </div>
+        <div class="links">
+            <ul class="links">
+                {% block links %}{% endblock %}
+            </ul>
+        </div>
+    </div>
+    <section class="application">
+        {% block application %}{% endblock %}
+    </section>
+    </body>
+</html>

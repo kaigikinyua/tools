@@ -1,0 +1,22 @@
+{% extends '../base/base.html' %}
+
+{% block barner_text %}
+    {{shopname}}'s Assets
+{% endblock barner_text %}
+
+{% block application %}
+    <table class="colored">
+        <tr>
+            <th>Description</th>
+            <th>SN</th>
+            <th>Location</th>
+        </tr>
+        {% for item in items %}
+            <tr>
+                <td>{{item.desc}}</td>
+                <td>{{item.sn}}</td>
+                <td>{{item.location}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock application %}

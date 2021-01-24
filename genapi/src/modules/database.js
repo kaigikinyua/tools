@@ -41,6 +41,16 @@ function filter({field,value,operand,data}){
     }
     //return data
 } 
+class Database{
+    static tables:(database)=>{
+        var f=new Files(database);
+        var data=f.readFile((data)=>{
+            if (data!=false){
+                return data;
+            }else{console.log("Error while reading file")}
+        });
+    }
+}
 
 module.exports=function({filename,type,callback,query}){
     fetch_all=()=>{

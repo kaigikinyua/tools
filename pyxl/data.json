@@ -1,0 +1,16 @@
+{
+    "shops":[
+        {"shopname":"Shop1","asset":"Datecs Printer","sn":"AD30102018","comment":"Brought for repairs"},
+        {"shopname":"Bata Two","asset":"Hp Monitor","sn":"FJALSKDJ","comment":"Sent to shop"},
+        {"shopname":"Bata Three","asset":"Hp Compaq 1690","sn":"KVJNAKJ098","comment":"Assigned to new user"},
+        {"shopname":"Bata Five","asset":"Dell CPU","sn":"UIOPI243","comment":"Sent to Arseco technologies"},
+        {"shopname":"Depot 009","asset":"Epson Printer","sn":"FAMABVM345","comment":"Brought for repairs"},
+        {"shopname":"Shop 109","asset":"Apple Dust","sn":"MUIT90325","comment":"Brought for repairs"}
+    ],
+    "users":[
+        {"user":"James Bond","asset":"Monitor","sn":"fajslkdjf","comment":"Assigned to new user"},
+        {"user":"Nickolas Cage","asset":"HP CPU","sn":"*354opifav","comment":"Brought for repairs"},
+        {"user":"William Willson","asset":"DELL CPU","sn":"mbncvxde34","comment":"User left"},
+        {"user":"Reception","asset":"Mouse","sn":"8048jfaor","comment":"Assigned to new user"}
+    ]
+}

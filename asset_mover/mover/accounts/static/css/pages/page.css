@@ -1,0 +1,55 @@
+div.sidenav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  background: pink;
+  width: 300px;
+  z-index: 11;
+  -webkit-box-shadow: 1px 1px 30px 30px rgba(10, 10, 10, 0.3);
+          box-shadow: 1px 1px 30px 30px rgba(10, 10, 10, 0.3);
+}
+
+div.sidenav_barner {
+  padding: 30px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: crimson;
+}
+
+div.sidenav_barner div.details {
+  font-size: 30px;
+  margin: 10px;
+  color: white;
+  font-weight: lighter;
+}
+
+div.menu {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 200px;
+}
+
+button.menu_btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  outline: none;
+  color: crimson;
+  border-radius: 0px;
+  padding: 5px;
+  margin: 10px 0px;
+}
+/*# sourceMappingURL=page.css.map */

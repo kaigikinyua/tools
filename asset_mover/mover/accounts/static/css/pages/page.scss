@@ -1,0 +1,39 @@
+@import '../global.scss';
+div.sidenav{
+    position: fixed;
+    top:0px;
+    left:0px;
+    height:100vh;
+    background: pink;
+    width:300px;
+    z-index: 11;
+    box-shadow: 1px 1px 30px 30px rgba(10,10,10,0.3);
+}
+
+div.sidenav_barner{
+    padding:30px 10px;
+    display: flex;
+    justify-content: center;
+    background:crimson;
+    div.details{
+        font-size: 30px;
+        margin:10px;
+        color:white;
+        font-weight: lighter;
+    }
+}
+div.menu{
+    position: relative;
+    @include center_h;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}
+button.menu_btn{
+    @include btn_default;
+    color:crimson;
+    border-radius: 0px;
+    padding:5px;
+    margin:10px 0px;
+}
+

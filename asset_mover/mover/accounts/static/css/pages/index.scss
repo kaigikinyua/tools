@@ -1,0 +1,34 @@
+@import '../global.scss';
+section.application{
+    background:whitesmoke;
+}
+div.landing{
+    position: relative;
+    @include middle;
+    height:80vh;
+    min-width:70vh;
+    max-width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    box-shadow: 1px 1px 20px 20px rgba(126, 90, 90, 0.1);
+}
+.call_to_action{
+    position: relative;
+    padding:10px;
+    width:200px;
+    @include big_button;
+    @include center_h;
+    background: crimson;
+    color:white;
+}
+.card_text{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding:10px;
+}
+div.card_img{
+
+}

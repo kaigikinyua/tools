@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css_links %}
+    <!--<link rel="stylesheet" href="{% static 'static/css/index.css'%}">-->
+{% endblock css_links %}
+
+{% block barner_text %}Asset Mover | Login{% endblock barner_text %}
+
+{% block links %}
+    <a href="#"><li>Home</li></a>
+    <a href="/login"><li>Login</li></a>
+{% endblock links %}
+
+{% block application %}
+    <div class="card">
+        {% if error %}
+            <h1 class="text_h1">Logged Out!</h1>
+            <p>You have successfully logged out</p>
+        {% else %}
+            <h1 class="text_h1">Error</h1>
+            <p>Error while logging out</p>
+        {% endif %}
+    </div>
+{% endblock application %}
