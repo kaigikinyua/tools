@@ -1,0 +1,14 @@
+{
+    "databases":[
+        {
+            "db_name":"",
+            "tables":[
+                {
+                    "table_name":"",
+                    "keys":[],
+                    "table_locked":false
+                }
+            ]
+        }
+    ]
+}
