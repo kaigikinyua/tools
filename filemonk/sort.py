@@ -1,34 +1,40 @@
-import re
-class KeyWords:
-    def __init__(self,datalist):
-        self.datalist=datalist
+import json,re
+from utils import *
+class ScorePoints:
+    def __init__(self,fileList):
+        self.fileList=fileList
 
-    def frequentWords(self):
-        foundWords=[]
-        matchedKeyWords=[
-            #{"word":0}
-        ]
-        for f in self.datalist:
-            words=self.splitWords(f)
-            for word in words:
-                if(word.lower() in foundWords):
-                    print(matchedKeyWords)
-                    matchedKeyWords[{word.lower()}]+=1
-                else:
-                    foundWords+=[word.lower()]
-                    matchedKeyWords+=[{word.lower():1}]
-        print(matchedKeyWords)
+    def fileScore(self):
+        keywords=None
+        with open('./mykeywords.json','r') as f:
+            data=json.load(f)
+            keywords=data["keywords"]
+        scoredFiles=[]
+        for f in self.fileList:
+            for category in keywords:
+                matches=0
+                matches_count=0
+                for word in category["words"]:
+                    matches=re.findall(word, f.lower())
+                    c=self.countNonEmpty(matches)
+                    matches_count+=c
+                c=category["name"]
+                filename=f
+                print("File {f} has scored {d} in category {c}".format(f=f,c=c,d=matches_count))
 
-    def splitWords(self,sentence):
-        words=re.findall('[\w]*',sentence)
-        refinedWords=[]
-        for word in words:
-            if(len(word)>0):
-                refinedWords+=[word]
-        return refinedWords
+    def countNonEmpty(self,array):
+        count=0
+        for item in array:
+            if(len(item)>0 and item!=''):
+                count+=1
+        return count
+
 
 if __name__=="__main__":
-    sentences=['One two three four five one two three','One quick']
-    k=KeyWords(sentences)
-    print(k.frequentWords())
+    f=Directory("/home/antony/Downloads/Video")
+    files=f.listFiles()
+    s=ScorePoints(files)
+    s.fileScore()
+
+
 
