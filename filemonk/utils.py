@@ -19,6 +19,44 @@ class Directory:
                 files+=[c]
         return folders
 
+class Files(Directory):
+    def __init__(self,filepath):
+        #super(directory)
+        self.filepath=filepath
+    
+    def copyFile(self,destinationDir):
+        if(os.path.isdir(destinationDir)):
+            commands=PlatForm()
+            #copy file to the destination
+        else:
+            Messages.error("Error: Destination {d} is not a valid directory".format(d=destinationDir))
+        return False
+    
+    def deleteFile(self):
+        pass
+
+    def createDir(self):
+        pass
+
+    def deleteDir(self):
+        pass
+
+class PlatForm:
+    windows={
+        "copyFile":"copy {src} {dest}",
+        "deleteFile":"",
+        "createFolder":"mkdir {folder}",
+        "deleteFolder":""
+    }
+    linux={
+        "copyFile":"cp {src} {dest}",
+        "deleteFile":"rm {file}",
+        "createFolder":"mkdir {folder}",
+        "deleteFolder":"rm -r {folder}"
+    }
+    def __init__(self):
+        #run platform checks and return the correct commands
+        pass
 
 class Messages:
     @staticmethod
