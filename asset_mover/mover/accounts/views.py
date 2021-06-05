@@ -6,20 +6,20 @@ from django.contrib.auth.decorators import login_required
 from accounts.forms import LoginForm
 
 def index(request):
-    return render(request,"accounts\index.html")
+    return render(request,"accounts/index.html")
 
 def logout(request):
     response=None
     try:
         logout(request)
-        response=render(request,"accounts\logout.html")
+        response=render(request,"accounts/logout.html")
     except:
-        response=render(request,"accounts\logout.html",{"error":"Error while loggin out"})
+        response=render(request,"accounts/logout.html",{"error":"Error while loggin out"})
     return response
 
 class Login(View):
     def get(self,request):
-        return render(request,"accounts\login.html")
+        return render(request,"accounts/login.html")
     def post(self,request):
         u=LoginForm(request.POST)
         response=None
