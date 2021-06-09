@@ -1,0 +1,25 @@
+{
+    "keywords":[
+        {
+            "name":"blender files",
+            "storage_loc":"./blender",
+            "words":[
+                "blender3d","blender","3d","modeling","Blender","Blender 2."
+            ]
+        },
+        {
+            "name":"formula 1",
+            "storage_loc":"./formula1",
+            "words":[
+                "formula","formula1","f1","grandprix","grandpre","drivers","tracks"
+            ]
+        },
+        {
+            "name":"programming",
+            "storage_loc":"./programming",
+            "words":[
+                "javascript","python","react","vue","tutorial","typescript","crash course"
+            ]
+        }
+    ]
+}
